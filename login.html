@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="login.css">
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+      integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+      rel="stylesheet"
+    />
+    <title>Login Page</title>
+</head>
+<body>
+    <div class="container" id="container">
+        <img src="c:\Users\ASUS\Downloads\Group 92.png" alt="">
+        <div class="sign-up">
+          <form>
+            <h1>Buat Akun</h1>
+            <input type="text" placeholder="Nama" />
+            <input type="text" placeholder="Email" />
+            <input type="password" placeholder="Password" />
+            <input type="password" placeholder="Konfirmasi Password" />
+            <button>Sign Up</button>
+          </form>
+        </div>
+        <div class="sign-in">
+          <form>
+            <h1>Masuk</h1>
+            <input type="text" placeholder="Email" />
+            <input type="password" placeholder="Password" />
+            <a href="#">Forgot password</a>
+            <button>Sign In</button>
+          </form>
+        </div>
+        <div class="toogle-container">
+          <div class="toogle">
+            <div class="toogle-panel toogle-left">
+              <h1>Selamat Datang di <br> Pastry Corner!</h1>
+              <p>Silahkan membuat akun untuk bisa mengakses penuh fitur website kami. <br> Jika anda sudah memiliki akun silahkan untuk masuk.</p>
+              <button class="hidden" id="login">Masuk</button>
+              <img src="c:\Users\ASUS\Downloads\lingkaran.png" alt="">
+            </div>
+          
+            <div class="toogle-panel toogle-right">
+                <h1>Selamat Datang di <br> Pastry Corner!</h1>
+              <p>Silahkan masuk untuk dapat mengakses penuh fitur website kami. <br> Jika anda belum memiliki akun silahkan untuk daftar terlebih dahulu</p>
+              <button class="hidden" id="register">Daftar</button>
+              <img src="c:\Users\ASUS\Downloads\lingkaran.png" alt="">
+            </div>
+          </div>
+        </div>
+      </div>
+      <script src="login.js"></script>
+</body>
+</html>
