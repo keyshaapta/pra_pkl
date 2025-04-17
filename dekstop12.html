@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script 
+    src="https://kit.fontawesome.com/bd5eaea774.js" 
+    crossorigin="anonymous">
+    </script>
+    <link rel="stylesheet" href="dekstop12.css">
+    <title>Document</title>
+</head>
+<body>
+    <header class="header">
+        <a href="" class="logo"><img src="c:\Users\ASUS\Downloads\222.png" ></a>
+        <nav class="navbar">
+            <a href="index.html#home">Beranda</a>
+            <a href="index.html#topdecoration">Produk</a>
+            <a href="index.html#sout">Tentang</a>
+            <a href="index.html#testimonial-section">Review</a>
+            <a href="index.html#neks">Kontak</a>
+        </nav>
+        <div class="icons">
+           <div id="user-icon"><i class="fa-regular fa-circle-user"></i></div>
+           <div id="heart-icon"><i class="fa-regular fa-heart"></i></div>
+           <div id="shopping-cart-icon"><i class="fa-solid fa-cart-shopping"></i></div>
+           <div id="search-icon"><i class="fa-solid fa-magnifying-glass"></i></div>
+           <div id="menu-btn"><i class="fa-solid fa-bars"></i></div>
+        </div>
+
+        <div class="search-form">
+            <input type="search" name="search" id="search-box" placeholder="cari disini...">
+            <label for="search-box" class="fa-solid fa-magnifying-glass"></label>
+        </div>
+
+        <div class="cart-items-container">
+
+<!--produk ke satu-->
+            <div class="cart-item">
+                <span class="fas fa-times"></span>
+                <img src="c:\Users\ASUS\Downloads\mellow choco.jpg" alt="">
+                <div class="content">
+                    <h3>croissant</h3>
+                    <div class="price">Rp 180.000,00</div>
+                </div>
+            </div>
+
+<!--produk ke dua-->
+            <div class="cart-item">
+                <span class="fas fa-times"></span>
+                <img src="c:\Users\ASUS\Downloads\danish blueberry ya.jpeg" alt="">
+                <div class="content">
+                    <h3>Blueberry Danish</h3>
+                    <div class="price">Rp 180.000,00</div>
+                </div>
+            </div>
+
+<!--produk ke tiga-->
+            <div class="cart-item">
+                <span class="fas fa-times"></span>
+                <img src="c:\Users\ASUS\Downloads\mille chocho.jpeg" alt="">
+                <div class="content">
+                    <h3>Mille-Feuille Chocolat</h3>
+                    <div class="price">Rp 180.000,00</div>
+                </div>
+            </div>
+
+<!--produk ke empat-->
+            <div class="cart-item">
+                <span class="fas fa-times"></span>
+                <img src="c:\Users\ASUS\Downloads\choux oreo ou.jpeg" alt="">
+                <div class="content">
+                    <h3>Choux Oreo</h3>
+                    <div class="price">Rp 180.000,00</div>
+                </div>
+            </div>
+
+            <a href="#" class="btn">Beli Sekarang</a>
+
+        </div>
+
+    </header>
+
+
+    <div class="upload-container">
+        <div class="upload-profile">
+            <div class="profile-info">
+                <div class="avatar" id="avatar">
+                    <i class="fa-regular fa-circle-user"></i>
+                </div>
+                <div class="profile-text">Unggah Foto Profil Baru</div>
+            </div>
+            <button class="upload-btn" id="uploadBtn">Unggah</button>
+        </div>
+    </div>
+
+    <div class="profile-card">
+        <h2 class="card-title">Detail Profile</h2>
+        
+        <form id="profileForm">
+            <div class="form-group">
+                <label for="nama">Nama</label>
+                <input type="text" id="nama" name="nama">
+            </div>
+            
+            <div class="form-group">
+                <label for="email">Email</label>
+                <input type="email" id="email" name="email">
+            </div>
+            
+            <div class="form-group">
+                <label for="telepon">Nomor Telepon</label>
+                <input type="tel" id="telepon" name="telepon">
+            </div>
+            
+            <div class="button-container">
+                <button type="submit" class="save-button">Simpan</button>
+            </div>
+        </form>
+    </div>
+
+    <div class="sandi-card">
+        <h2 class="card-title">Ganti Sandi</h2>
+        
+        <form id="passwordForm">
+            <div class="form-group">
+                <label for="sandiLama">Sandi Lama</label>
+                <input type="password" id="sandiLama" name="sandiLama">
+                <div id="sandiLamaError" class="error-message">Sandi lama wajib diisi</div>
+            </div>
+            
+            <div class="form-group">
+                <label for="sandiBaru">Sandi Baru</label>
+                <input type="password" id="sandiBaru" name="sandiBaru">
+                <div id="sandiBaruError" class="error-message">Sandi baru wajib diisi</div>
+            </div>
+            
+            <div class="button-container">
+                <button type="submit" class="save-button">Simpan</button>
+            </div>
+        </form>
+    </div>
+
+    <div class="form-container">
+        <h1>Ganti Alamat</h1>
+        <form id="addressForm">
+            <div class="form-row">
+                <div class="form-group">
+                    <label for="nama">Nama</label>
+                    <input type="text" id="nama" name="nama" required>
+                </div>
+                <div class="form-group">
+                    <label for="telepon">Nomor Telepon</label>
+                    <input type="tel" id="telepon" name="telepon" required>
+                </div>
+            </div>
+            <div class="form-row">
+                <div class="form-group">
+                    <label for="provinsi">Provinsi</label>
+                    <input type="text" id="provinsi" name="provinsi" required>
+                </div>
+                <div class="form-group">
+                    <label for="kota">Kota/Kabupaten</label>
+                    <input type="text" id="kota" name="kota" required>
+                </div>
+            </div>
+            <div class="form-row">
+                <div class="form-group">
+                    <label for="kecamatan">Kecamatan</label>
+                    <input type="text" id="kecamatan" name="kecamatan" required>
+                </div>
+                <div class="form-group">
+                    <label for="desa">Desa</label>
+                    <input type="text" id="desa" name="desa" required>
+                </div>
+            </div>
+            <div class="form-row">
+                <div class="form-group-full">
+                    <label for="kodepos">Kode Pos</label>
+                    <input type="text" id="kodepos" name="kodepos" required>
+                </div>
+            </div>
+            <div class="form-row">
+                <div class="form-group-full">
+                    <label for="alamat">Alamat Lengkap</label>
+                    <textarea id="alamat" name="alamat" required></textarea>
+                </div>
+            </div>
+            <button type="submit" class="submit-btn">Simpan</button>
+        </form>
+    </div>
+
+    <footer class="footer">
+        <div class="footer-container">
+            <div class="footer-section">
+                <h3>Connect To Us</h3>
+                <div class="social-icons">
+                    <a href="https://www.instagram.com/" class="social-icon"><i class="fa-brands fa-instagram"></i></a>
+                    <a href="https://www.tiktok.com/" class="social-icon"><i class="fa-brands fa-tiktok"></i></a>
+                    <a href="https://x.com/" class="social-icon"><i class="fa-brands fa-x-twitter"></i></a>
+                    <a href="https://www.youtube.com/" class="social-icon"><i class="fa-brands fa-youtube"></i></a>
+                </div>
+            </div>
+    
+            <div class="footer-section">
+                <ul class="footer-links">
+                    <li><a href="index.html#home">Beranda</a></li>
+                    <li><a href="index.html#topdecoration">Produk</a></li>
+                    <li><a href="index.html#sout">Tentang Kami</a></li>
+                    <li><a href="index.html#testimonial-section">Review</a></li>
+                    <li><a href="index.html#neks">Lokasi</a></li>
+                </ul>
+            </div>
+    
+            <div class="footer-sectionth">
+                <h3>Customer Care</h3>
+                <p>cs@pasner.com</p>
+                <p>083846643602 (WhatsApp)</p>
+            </div>
+    
+    
+        </div>
+    
+        <div class="copyright">
+            2025 Copyright PASTRY CORNER. All Right Reserved
+        </div>
+    </footer>
+
+    <script src="dekstop12.js"></script>
+</body>
+</html>

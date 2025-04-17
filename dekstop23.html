@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script 
+    src="https://kit.fontawesome.com/bd5eaea774.js" 
+    crossorigin="anonymous">
+    </script>
+    <link rel="stylesheet" href="dekstop23.css">
+    <title>Document</title>
+</head>
+<body>
+    
+
+    <div class="sidebar">
+        <div class="sidebar-header">
+            <h2>Dashboard</h2>
+        </div>
+        <div class="sidebar-menu">
+            <a href="#dashboard" class="menu-item">
+                <i class="far fa-square"></i>
+                <span class="menu-item-text">Dashboard</span>
+            </a>
+            <a href="dekstop20.html" class="menu-item">
+                <i class="far fa-square"></i>
+                <span class="menu-item-text">Produk</span>
+                <i class="fas fa-chevron-right arrow"></i>
+            </a>
+            <a href="dekstop19,2.html" class="menu-item active">
+                <i class="far fa-user"></i>
+                <span class="menu-item-text">Pelanggan</span>
+                <i class="fas fa-chevron-right arrow"></i>
+            </a>
+            <a href="dekstop23.html" class="menu-item">
+                <i class="far fa-comment"></i>
+                <span class="menu-item-text">Pesanan</span>
+                <i class="fas fa-chevron-right arrow"></i>
+            </a>
+            <a href="#review" class="menu-item">
+                <span class="menu-item-text">Review</span>
+                <i class="fas fa-chevron-right arrow"></i>
+            </a>
+            <a href="dekstop24.html" class="menu-item">
+                <span class="menu-item-text">Pesan</span>
+                <i class="fas fa-chevron-right arrow"></i>
+            </a>
+        </div>
+        <div class="sidebar-footer">
+            <div class="admin-profile">
+                <div class="admin-avatar"></div>
+                <div class="admin-info">
+                    <div class="admin-name">Aisyah</div>
+                    <div class="admin-role">Admin</div>
+                </div>
+                <i class="fas fa-chevron-down arrow"></i>
+            </div>
+        </div>
+    </div>
+
+    <div class="content">
+        <!-- Content goes here -->
+    </div>
+
+    <!-- Main Content -->
+    <div class="main-content">
+        <div class="header">
+            <div class="greeting">
+                Hello Aisyah <span>👋</span>
+            </div>
+            <div class="search-container">
+                <i class="fas fa-search"></i>
+                <input type="text" placeholder="Search">
+            </div>
+        </div>
+
+        <div class="stats-container">
+            <div class="stat-card">
+                <div class="stat-icon"></div>
+                <div class="stat-info">
+                    <div class="stat-title">Total Pelanggan</div>
+                    <div class="stat-value">208</div>
+                </div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-icon"></div>
+                <div class="stat-info">
+                    <div class="stat-title">Produk</div>
+                    <div class="stat-value">23</div>
+                </div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-icon"></div>
+                <div class="stat-info">
+                    <div class="stat-title">Pesanan</div>
+                    <div class="stat-value">189</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Placeholder for additional content that will come later -->
+        <div id="additional-content-area"></div>
+    
+
+    <!-- Customer Table Section -->
+    <div class="customers-section">
+        <div class="customers-header">
+            <h2 class="customers-title">Pesanan</h2>
+            <div class="customers-search-sort">
+                <div class="customers-search">
+                    <i class="fas fa-search"></i>
+                    <input type="text" placeholder="Search">
+                </div>
+                <div class="sort-dropdown">
+                    <span>Short by:</span>
+                    <select id="sort-select">
+                        <option value="newest">Newest</option>
+                        <option value="oldest">Oldest</option>
+                        <option value="name-asc">Name (A-Z)</option>
+                        <option value="name-desc">Name (Z-A)</option>
+                    </select>
+                </div>
+            </div>
+        </div>
+        <table class="customers-table">
+            <thead>
+                <tr>
+                    <th>Tanggal</th>
+                    <th>Nama Pelanggan</th>
+                    <th>Produk</th>
+                    <th>Alamat</th>
+                    <th>Total</th>
+                    <th>Status</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>11-03-2025</td>
+                    <td>083444444444</td>
+                    <td>Croissant(3)</td>
+                    <td>Jl. Adakala, Senayan</td>
+                    <td>Rp 18.000</td>
+                    <td>Disiapkan</td>
+                </tr>
+                <tr>
+                    <td>09-03-2025</td>
+                    <td>08666666666</td>
+                    <td>Danish Pastry(2)</td>
+                    <td>Jl. Adakala, Senayan</td>
+                    <td>Rp 18.000</td>
+                    <td>Diterima</td>
+                </tr>
+                <!-- More rows can be added dynamically via JavaScript -->
+            </tbody>
+        </table>
+    </div>
+</div>
+
+    
+    
+        <script src="dekstop23.js"></script>
+</body>
+</html>
