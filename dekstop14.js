@@ -219,53 +219,45 @@ document.addEventListener('DOMContentLoaded', function() {
                     item.parentNode.insertBefore(clone, item.nextSibling);
                 });
             });
-            
-            function attachEventListeners(item) {
-                // Attach quantity control listeners
-                const decreaseBtn = item.querySelector('.decrease-btn');
-                const increaseBtn = item.querySelector('.increase-btn');
-                const deleteBtn = item.querySelector('.delete-btn');
-                const copyBtn = item.querySelector('.copy-btn');
-                const checkbox = item.querySelector('.item-checkbox');
-                
-                decreaseBtn.addEventListener('click', function() {
-                    const input = this.parentElement.querySelector('.quantity-input');
-                    let value = parseInt(input.value);
-                    if (value > 1) {
-                        input.value = value - 1;
-                    }
-                });
-                
-                increaseBtn.addEventListener('click', function() {
-                    const input = this.parentElement.querySelector('.quantity-input');
-                    let value = parseInt(input.value);
-                    input.value = value + 1;
-                });
-                
-                deleteBtn.addEventListener('click', function() {
-                    item.remove();
-                    updateSelectAllState();
-                });
-                
-                copyBtn.addEventListener('click', function() {
-                    const clone = item.cloneNode(true);
-                    attachEventListeners(clone);
-                    item.parentNode.insertBefore(clone, item.nextSibling);
-                });
-                
-                checkbox.addEventListener('change', function() {
-                    updateSelectAllState();
-                });
-            }
-            
-            function updateSelectAllState() {
-                const itemCheckboxes = document.querySelectorAll('.item-checkbox');
-                if (itemCheckboxes.length === 0) {
-                    selectAllCheckbox.checked = false;
-                    return;
-                }
-                
-                const allChecked = Array.from(itemCheckboxes).every(cb => cb.checked);
-                selectAllCheckbox.checked = allChecked;
-            }
-        });
+      
+});
+
+// Hapus semua event listener yang ada dengan mengganti elemen
+document.addEventListener('DOMContentLoaded', function() {
+    // Fungsi yang akan dijalankan saat tombol diklik
+    function handleIncrease() {
+        const input = this.parentElement.querySelector('.quantity-input');
+        let value = parseInt(input.value);
+        input.value = value + 1;
+    }
+    
+    function handleDecrease() {
+        const input = this.parentElement.querySelector('.quantity-input');
+        let value = parseInt(input.value);
+        if (value > 1) {
+            input.value = value - 1;
+        }
+    }
+    
+    // Ambil semua tombol
+    const increaseButtons = document.querySelectorAll('.increase-btn');
+    const decreaseButtons = document.querySelectorAll('.decrease-btn');
+    
+    // Hapus dan tambahkan ulang event listener untuk tombol increase
+    increaseButtons.forEach(button => {
+        // Hapus event listener yang ada dengan mengganti elemen
+        const newButton = button.cloneNode(true);
+        button.parentNode.replaceChild(newButton, button);
+        
+        // Tambahkan event listener baru
+        newButton.onclick = handleIncrease;
+    });
+    
+    // Hal yang sama untuk tombol decrease
+    decreaseButtons.forEach(button => {
+        const newButton = button.cloneNode(true);
+        button.parentNode.replaceChild(newButton, button);
+        
+        newButton.onclick = handleDecrease;
+    });
+});
