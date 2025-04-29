@@ -190,6 +190,13 @@ body {
     margin-right: 20px;
 }
 
+.material-symbols-outlined {
+    color: white;
+    font-size: 40px;
+    margin-left: 15px;
+    margin-top: 15px;
+}
+
 .stat-info {
     display: flex;
     flex-direction: column;
