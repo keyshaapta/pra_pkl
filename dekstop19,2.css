@@ -41,13 +41,14 @@ body {
     flex-direction: column;
     padding: 10px 0;
     flex-grow: 1;
+    color: #9197B3;
 }
 
 .menu-item {
     display: flex;
     align-items: center;
     padding: 12px 20px;
-    color: #666;
+    color: #9197B3;
     text-decoration: none;
     position: relative;
     transition: all 0.3s ease;
@@ -59,6 +60,22 @@ body {
     width: 24px;
     margin-right: 10px;
     font-size: 18px;
+}
+
+
+.key-square {
+    margin-left: -5px;
+    margin-right: 13px;
+}
+
+.wallet-money {
+    margin-left: -5px;
+    margin-right: 13px;
+}
+
+.cube {
+    margin-left: -5px;
+    margin-right: 13px;
 }
 
 .menu-item-text {
