@@ -163,7 +163,7 @@
 }
 
 .checkout-container {
-    width: 1000px;
+    width: 1150px;
    padding-left: 100px;
    padding-top: 8%;
 }
@@ -187,6 +187,7 @@
     justify-content: space-between;
     align-items: center;
     margin-bottom: 15px;
+    margin-right: 380px;
 }
 
 .delivery-title {
@@ -210,6 +211,27 @@ a {
     font-size: 14px;
     text-decoration: none;
     font-family: Poppins;
+}
+
+.ganti a {
+    color: #A38459;
+    font-size: 14px;
+    text-decoration: none;
+    font-family: Poppins;
+    margin-right: 200px;
+}
+
+.checkout-layout {
+    display: flex;
+    gap: 20px;
+}
+
+.checkout-left {
+    flex: 2;
+}
+
+.checkout-right {
+    flex: 1;
 }
 
 .card {
@@ -396,6 +418,67 @@ span {
     font-weight: 600;
     color: #5a4a3a;
     text-align: right;
+}
+
+.order-summary {
+    padding: 15px;
+    background-color: #F6F6F6;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.summary-row {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 15px;
+}
+
+.summary-label {
+    color: #6B4E3E;
+    font-size: 16px;
+    font-family: Poppins;
+}
+
+.summary-value {
+    color: #6B4E3E;
+    font-size: 16px;
+    text-align: right;
+    font-family: Poppins;
+}
+
+.free-shipping {
+    color: #6B4E3E;
+    font-weight: 600;
+    font-family: Poppins;
+}
+
+.summary-divider {
+    height: 1px;
+    background-color: #e0e0e0;
+    margin: 15px 0;
+}
+
+.summary-total {
+    font-weight: 700;
+    font-size: 18px;
+    font-family: Poppins;
+    color: #6B4E3E;
+}
+
+.checkout-btn {
+    background-color: #887964;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    padding: 12px;
+    width: 100%;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    margin-top: 10px;
+}
+
+.checkout-btn:hover {
+    background-color: #7A6346;
 }
 
 .footer {

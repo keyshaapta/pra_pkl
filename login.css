@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+
 * {
     margin: 0;
     padding: 0;
@@ -15,7 +17,7 @@
     height: 100vh;
   }
   
-.container {
+.container{
   background-color: #fff;
   box-shadow: 0 5px 15px rgba(0, 0, 0, 0.35);
   position: relative;
@@ -25,12 +27,31 @@
 }
 
   .container img{
-    width: 41%;
+    width: 100%;
+    height: 100%;
     transition: all 0.6s ease-in-out;
   }
   
   .container.active img{
     transform: translateX(115%);
+  }
+
+   .sign-in h1{
+    color: #887964;
+    font-family: Montserrat;
+    font-size: 35px;
+    margin-left: -75%;
+    margin-bottom: 20px;
+    border-bottom: 2px solid #887964;
+  }
+
+  .sign-up h1{
+    color: #887964;
+    font-family: Montserrat;
+    font-size: 35px;
+    margin-left: -65%;
+    margin-bottom: 20px;
+    border-bottom: 2px solid #887964;
   }
 
   .container p {
@@ -39,20 +60,28 @@
     letter-spacing: 0.3px;
     margin: 20px 0;
   }
-  
-  
-  .container span {
-    font-size: 12px;
-  }
+
+.container.active .sign-up{
+  transform: translateX(0);
+  opacity: 1;
+  z-index: 5;
+}
+
+.container.active .sign-in{
+  transform: translateX(-100%);
+  opacity: 0;
+  z-index: 1;
+}
+
   
   .container a {
-    color: #333;
+    color: #887964;
     font-size: 20px;
     text-decoration: none;
     margin: 15px 0 10px;
   }
   .container button {
-    background-color: #9E907D;
+    background-color: #887964;
     color: #fff;
     padding: 10px 45px;
     border: 1px solid transparent;
@@ -62,9 +91,17 @@
     text-transform: uppercase;
     margin-top: 10px;
     cursor: pointer;
+    font-size: 15px;
   }
   
-  .container button.hidden {
+  .toogle-left button.hidden {
+    background-color: white;
+    border-color: #fff;
+    color: #9E907D;
+    padding-left: -30%;
+  }
+
+  .toogle-right button.hidden {
     background-color: white;
     border-color: #fff;
     color: #9E907D;
@@ -85,10 +122,35 @@
     border: none;
     margin: 8px 0;
     padding: 10px 15px;
+    cursor: pointer;
     font-size: 20px;
-    border-radius: 8px;
+    border-radius: 30px;
     width: 100%;
     outline: none;
+    box-shadow: 5px 5px #887964;
+  }
+
+  .container input:hover {
+    border: 2px solid #887964;
+    
+  }
+
+  .nam {
+    color: #887964;
+    font-size: 20px;
+    margin-left: -88%;
+  }
+
+  .ema {
+    color: #887964;
+    font-size: 20px;
+    margin-left: -88%;
+  }
+
+  .pas {
+    color: #887964;
+    font-size: 20px;
+    margin-left: -79%;
   }
   
   .sign-up, .sign-in {
@@ -142,20 +204,7 @@
     }
   }
   
-  .icons {
-    margin: 20px 0;
-  }
   
-  .icons a {
-    border: 1px solid #ccc;
-    border-radius: 20%;
-    display: inline-flex;
-    justify-content: center;
-    align-items: center;
-    margin: 0 3px;
-    width: 40px;
-    height: 40px;
-  }
   
   .toogle-container {
   position: absolute;
@@ -169,47 +218,18 @@
   pointer-events: none; /* biar gak ganggu klik elemen lain */
 }
 
-/* .toogle {
-  position: absolute; 
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background-image: url("/asset/lingkaran.png");
-  background-size: cover;
-  background-position: center;
-  color: #fff;
-  transition: all 0.6s ease-in-out;
-  z-index: 1000;
-  pointer-events: auto;
-  transform: translateX(0);
-} */
-
   
   .container.active .toogle-container {
     transform: translateX(-100%);
     /* border-radius: 150px; */
   }
-  
-  .toogle {
-    /* background-color: #9E907D; */
-    height: 100%;
-    background-image: url("/asset/lingkaran.png");
-    color: #fff;
-    position: relative;
-    left: -100%;
-    width: 200%;
-    transform: translateX(0);
-    transition: transform 0.6s ease-in-out;
-    z-index: 1000;
-    pointer-events: auto;
-    overflow: hidden;
-  }
 
-  .toogle img {
+
+  .toogle.circle-bg img {
     position: absolute;
     z-index: -1;
-    width: 140%;
+    width: 100%;
+    height: 100%;
     left: -70%;
     transform: translateX(50%);
     transition: transform 0.6s ease-in-out;    
@@ -217,13 +237,68 @@
   }
   
 
-  .container.active .toogle img{
+  .container.active .toogle.circle-bg img{
     position: absolute;
     z-index: -1;
     left: 238%;
     transform: translateX(-200%);
   }
 
+  .toogle {
+  height: 100%;
+  
+  color: #fff;
+  position: relative;  /* Tetap gunakan ini */
+  left: -100%;
+  width: 200%;
+  transform: translateX(0);
+  transition: transform 0.6s ease-in-out;
+  z-index: 5;  /* Kurangi nilai z-index jika perlu */
+  pointer-events: none;  /* Ubah ke none agar input di bawahnya bisa diakses */
+  overflow: hidden;
+}
+
+.circle-bg {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  transition: transform 0.6s ease-in-out;
+  z-index: -1;
+  width: 100%;
+  height: auto;
+}
+
+.container.active .circle-bg {
+  transform: translate(50%, -50%); /* geser ke kanan */
+}
+
+
+.toogle-right p {
+    padding: 0 0 0 140px;
+    font-size: 20px;
+    line-height: 25px;
+  }
+
+  .toogle button{
+    margin: 0 0 0 140px;
+  }
+
+  .toogle-container.active .toogle button {
+  margin: 0 200px 0 0;
+}
+
+
+.toogle.circle-bg img {
+  position: absolute;
+  z-index: -1;  /* Pastikan gambar berada di belakang konten lain */
+  width: 140%;
+  left: -70%;
+  transform: translateX(50%);
+  transition: transform 0.6s ease-in-out;    
+  will-change: transform;
+  pointer-events: none;  /* Pastikan gambar tidak menghalangi interaksi */
+}
   
 
 .toogle-left h1 {
@@ -238,6 +313,7 @@
     font-weight: 700;
       line-height: 90px;
       padding: 0 0 0 140px;
+      color: white;
   
 }
 
@@ -262,13 +338,13 @@
     padding: 0 200px 0 0;
   }
 
-  .toogle button{
+  /*.toogle button{
     margin: 0 0 0 140px;
   }
 
   .container.active .toogle button{
     margin: 0 200px 0 0;
-  }
+  }*/
   
   .container.active .toogle {
     transform: translateX(50%);

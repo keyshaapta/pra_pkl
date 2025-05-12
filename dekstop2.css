@@ -437,8 +437,7 @@
     flex-direction: column;
 }
 
-.box-top {
-    
+.box-top {   
     display: flex;
 }
 
@@ -450,6 +449,35 @@
 .box-bottom {
     padding-top: 30px;
     display: flex;
+}
+
+.box-empt {
+    padding-top: 30px;
+    display: flex;
+}
+
+.box-lim {
+    padding-top: 30px;
+    display: flex;
+}
+
+.box-enm {
+    padding-top: 30px;
+    display: flex;
+}
+
+.box-tuju {
+    padding-top: 30px;
+    display: flex;
+}
+
+.box-lpan {
+    padding-top: 30px;
+    display: flex;
+}
+
+.box-smbln {
+    padding-top: 30px;
 }
 
 .product-card {

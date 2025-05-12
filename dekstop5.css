@@ -430,9 +430,9 @@
     width: 45px;
 }
 
-.btn-favorite:hover {
-    background-color: #887964;
-}
+/*.btn-favorite:hover {
+    background-color: white;
+}*/
 
 .btn-cart {
     background-color: #5E5344;

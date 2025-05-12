@@ -1,17 +1,51 @@
-const container = document.getElementById("container");
-const registerbtn = document.getElementById("register");
-const loginbtn = document.getElementById("login");
-
-registerbtn.addEventListener("click", () => {
-  console.log("klik daftar");
-  container.classList.add("active");
-});
-
-loginbtn.addEventListener("click", () => {
-  console.log("klik masuk");
-  container.classList.remove("active");
-});
+document.addEventListener('DOMContentLoaded', function() {
+    const container = document.querySelector('.container');
+    const signUpButton = document.getElementById('register');
+    const signInButton = document.getElementById('login');
     
+    // Add event listeners to the buttons
+    if (signUpButton) {
+        signUpButton.addEventListener('click', () => {
+            container.classList.add('right-panel-active');
+        });
+    }
+    
+    if (signInButton) {
+        signInButton.addEventListener('click', () => {
+            container.classList.remove('right-panel-active');
+        });
+    }
+    
+    // Create and add croissant elements
+    const croissantPositions = [
+        { top: '10%', right: '15%', rotation: 25 },
+        { top: '60%', right: '25%', rotation: -15 },
+        { top: '30%', left: '15%', rotation: 45 },
+        { bottom: '15%', left: '20%', rotation: -30 },
+        { bottom: '25%', right: '10%', rotation: 60 }
+    ];
+    
+    croissantPositions.forEach((pos, index) => {
+        const croissant = document.createElement('img');
+        croissant.src = 'croissant.png'; // Make sure you have this image file
+        croissant.alt = 'Croissant';
+        croissant.className = `croissant croissant-${index + 1}`;
+        
+        // Apply positioning styles
+        Object.keys(pos).forEach(key => {
+            if (key !== 'rotation') {
+                croissant.style[key] = pos[key];
+            }
+        });
+        
+        // Apply rotation
+        if (pos.rotation) {
+            croissant.style.transform = `rotate(${pos.rotation}deg)`;
+        }
+        
+        // Add the croissant to the container
+        container.appendChild(croissant);
+    });
     
     // Form validation
     const signInForm = document.getElementById('sign-inForm');
@@ -22,18 +56,11 @@ loginbtn.addEventListener("click", () => {
             const email = document.getElementById('email').value;
             const password = document.getElementById('password').value;
             
-            // pop up
+            // Basic validation
             if (!email || !password) {
                 alert('mohon dilengkapi dahulu');
                 return;
             }
-
-            if (!password) {
-              alert('password salah');
-              return;
-            }
-
-            
             
             // Here you would normally send the data to a server
             console.log('Form submitted:', { email, password });
@@ -49,19 +76,14 @@ loginbtn.addEventListener("click", () => {
         signUpForm.addEventListener('submit', function(e) {
             e.preventDefault();
             
-            const nama = document.getElementById('nama').value;
+            const nama = doucment.getElementById(nama).value;
             const email = document.getElementById('email').value;
             const password = document.getElementById('password').value;
             
-            // pop up
+            // Basic validation
             if (!nama || !email || !password) {
                 alert('mohon lengkapi dulu');
                 return;
-            }
-
-            if (!password) {
-              alert('password salah');
-              return;
             }
             
             // Here you would normally send the data to a server
@@ -75,7 +97,7 @@ loginbtn.addEventListener("click", () => {
     // For demo purposes, let's initialize the page in the sign-up view
     // Comment out the next line if you want to start with the sign-in view
     // container.classList.add('right-panel-active');
-
+});
 
 document.addEventListener('DOMContentLoaded', function() {
   const inputs = document.querySelectorAll('.typewriter');
@@ -87,7 +109,7 @@ document.addEventListener('DOMContentLoaded', function() {
           // Simulate typing when focused
           const demoText = this.id.includes('email') ? 'contoh@gmail.com' : 
                           this.id.includes('password') ? '••••••••' : 
-                          'nama lengkap';
+                          'Nama Lengkap';
           
           let i = 0;
           const typeInterval = setInterval(() => {

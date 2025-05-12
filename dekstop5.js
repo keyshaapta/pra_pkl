@@ -53,3 +53,4 @@ document.getElementById('contactForm').addEventListener('submit', function(e) {
     // Show success message (you could enhance this)
     alert('Pesan Anda telah dikirim. Terima kasih!');
 });
+
