@@ -14,18 +14,27 @@
     <title>Login Page</title>
 </head>
 <body>
-    <div class="container " id="container">
+    <div class="container" id="container">
         <img src="image\Group 92.png" alt="">
         <div class="sign-up">
           <form id="sign-upForm">
             <h1>Buat Akun</h1>
-            <label class="nam">Nama</label>
+            <!--<label class="nam">Nama</label>
             <input type="text" id="nama" class="typewriter" />
             <label class="ema">Email</label>
             <input type="text" id="email" class="typewriter" />
             <label class="pas">Password</label>
             <input type="password" id="password" class="typewriter" />
             
+            <button type="submit">Sign Up</button>-->
+
+            <label class="nam">Nama</label>
+            <input type="text" id="signup-nama" class="typewriter" /> <!-- Ubah ID -->
+            <label class="ema">Email</label>
+            <input type="text" id="signup-email" class="typewriter" /> <!-- Ubah ID -->
+            <label class="pas">Password</label>
+            <input type="password" id="signup-password" class="typewriter" /> <!-- Ubah ID -->
+    
             <button type="submit">Sign Up</button>
           </form>
         </div>
@@ -34,32 +43,39 @@
         <div class="sign-in">
           <form id="sign-inForm">
             <h1>Masuk</h1>
-            <label class="ema">Email</label>
+            <!--<label class="ema">Email</label>
             <input type="text" id="email" class="typewriter" />
             <label class="pas">Password</label>
             <input type="password" id="password" class="typewriter" />
             <a href="login.html" class="link">Forgot password</a>
-            <a href="index.html"><button type="submit">Sign In</button></a>
+            <a href="index.html"><button type="submit">Sign In</button></a>-->
+
+            <label class="ema">Email</label>
+            <input type="text" id="signin-email" class="typewriter" /> <!-- Ubah ID -->
+            <label class="pas">Password</label>
+            <input type="password" id="signin-password" class="typewriter" /> <!-- Ubah ID -->
+            <a href="login.html" class="link">Forgot password</a>
+            <button type="submit">Sign In</button> <!-- Hapus a href karena submit sudah di handle JS -->
           </form>
         </div>
         
 
         <div class="toogle-container">
           <div class="toogle">
-            <img class="circle-bg" src="image\lingkaran.png" alt="">
+            
 
             <div class="toogle-panel toogle-left">
               <h1>Selamat Datang di <br> Pastry Corner!</h1>
               <p>Silahkan membuat akun untuk bisa mengakses penuh fitur website kami. <br> Jika anda sudah memiliki akun silahkan untuk masuk.</p>
-              <button class="hidden" id="login">Masuk</button>
-              
+              <button class="hidden" id="login" type="button">Masuk</button>
+              <img src="image\lingkaran.png" alt="">
             </div>
           
             <div class="toogle-panel toogle-right">
                 <h1>Selamat Datang di <br> Pastry Corner!</h1>
               <p>Silahkan masuk untuk dapat mengakses penuh fitur website kami. <br> Jika anda belum memiliki akun silahkan untuk daftar terlebih dahulu</p>
-              <button class="hidden" id="register">Daftar</button>
-              
+              <button class="hidden" id="register" type="button">Daftar</button>
+              <img src="image\lingkaran.png" alt="">
             </div>
           </div>
         </div>

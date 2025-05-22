@@ -14,7 +14,7 @@ loginbtn.addEventListener("click", () => {
     
     
     // Form validation
-    const signInForm = document.getElementById('sign-inForm');
+    /*const signInForm = document.getElementById('sign-inForm');
     if (signInForm) {
         signInForm.addEventListener('submit', function(e) {
             e.preventDefault();
@@ -100,4 +100,87 @@ document.addEventListener('DOMContentLoaded', function() {
           }, 100);
       });
       });
-       });
+       });*/
+
+       // 1. Event listener untuk DOM yang sudah siap
+document.addEventListener('DOMContentLoaded', function() {
+  // 2. Inisialisasi tombol toggle
+  const container = document.getElementById("container");
+  const registerBtn = document.getElementById("register");
+  const loginBtn = document.getElementById("login");
+  
+  registerBtn.addEventListener("click", (e) => {
+    e.preventDefault();
+    console.log("Klik daftar");
+    container.classList.add("active");
+  });
+  
+  loginBtn.addEventListener("click", (e) => {
+    e.preventDefault();
+    console.log("Klik masuk");
+    container.classList.remove("active");
+  });
+  
+  // 3. Validasi form sign-in
+  const signInForm = document.getElementById('sign-inForm');
+  if (signInForm) {
+    signInForm.addEventListener('submit', function(e) {
+      e.preventDefault();
+      
+      const email = document.getElementById('signin-email').value;
+      const password = document.getElementById('signin-password').value;
+      
+      if (!email || !password) {
+        alert('mohon dilengkapi dahulu');
+        return;
+      }
+      
+      console.log('Form submitted:', { email, password });
+      signInForm.reset();
+    });
+  }
+  
+  // 4. Validasi form sign-up
+  const signUpForm = document.getElementById('sign-upForm');
+  if (signUpForm) {
+    signUpForm.addEventListener('submit', function(e) {
+      e.preventDefault();
+      
+      const nama = document.getElementById('signup-nama').value;
+      const email = document.getElementById('signup-email').value;
+      const password = document.getElementById('signup-password').value;
+      
+      if (!nama || !email || !password) {
+        alert('mohon lengkapi dulu');
+        return;
+      }
+      
+      console.log('Form submitted:', { nama, email, password });
+      signUpForm.reset();
+    });
+  }
+  
+  // 5. Efek typewriter - ini adalah kode nomor 3 yang Anda tanyakan
+  const inputs = document.querySelectorAll('.typewriter');
+  
+  inputs.forEach(input => {
+    input.addEventListener('focus', function() {
+      this.setAttribute('placeholder', '');
+      
+      // Simulate typing when focused
+      const demoText = this.id.includes('email') ? 'contoh@gmail.com' : 
+                      this.id.includes('password') ? '••••••••' : 
+                      'nama lengkap';
+      
+      let i = 0;
+      const typeInterval = setInterval(() => {
+        if (i < demoText.length && document.activeElement === this) {
+          this.setAttribute('placeholder', this.getAttribute('placeholder') + demoText.charAt(i));
+          i++;
+        } else {
+          clearInterval(typeInterval);
+        }
+      }, 100);
+    });
+  });
+});

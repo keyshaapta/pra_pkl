@@ -1,0 +1,250 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    overflow: hidden;
+}
+
+.container {
+    position: relative;
+    width: 768px;
+    height: 480px;
+    background-color: white;
+    box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.croissant-bg {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    background-image: url('https://img.freepik.com/free-photo/fresh-croissants-wooden-board_144627-8789.jpg');
+    background-size: cover;
+    opacity: 0.1;
+    z-index: 0;
+}
+
+.form-container {
+    position: absolute;
+    top: 0;
+    height: 100%;
+    transition: all 0.6s ease-in-out;
+}
+
+.sign-in-container {
+    left: 0;
+    width: 50%;
+    z-index: 2;
+}
+
+.sign-up-container {
+    left: 0;
+    width: 50%;
+    opacity: 0;
+    z-index: 1;
+}
+
+.container.active .sign-in-container {
+    transform: translateX(100%);
+}
+
+.container.active .sign-up-container {
+    transform: translateX(100%);
+    opacity: 1;
+    z-index: 5;
+}
+
+form {
+    background-color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    padding: 0 50px;
+    height: 100%;
+    text-align: center;
+}
+
+h1 {
+    margin-bottom: 20px;
+    font-size: 28px;
+}
+
+p {
+    font-size: 14px;
+    margin-bottom: 20px;
+    text-align: center;
+    line-height: 1.5;
+}
+
+input {
+    background-color: #eee;
+    border: none;
+    padding: 12px 15px;
+    margin: 8px 0;
+    width: 100%;
+    border-radius: 5px;
+    font-size: 16px;
+}
+
+button {
+    border-radius: 20px;
+    border: 1px solid #a08d7c;
+    background-color: #a08d7c;
+    color: #fff;
+    font-size: 14px;
+    font-weight: bold;
+    padding: 12px 45px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    transition: transform 80ms ease-in;
+    cursor: pointer;
+    margin-top: 15px;
+}
+
+button:active {
+    transform: scale(0.95);
+}
+
+button:focus {
+    outline: none;
+}
+
+button.ghost {
+    background-color: transparent;
+    border-color: #fff;
+}
+
+a {
+    color: #a08d7c;
+    text-decoration: none;
+    margin: 15px 0;
+    font-size: 14px;
+}
+
+.overlay-container {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    width: 50%;
+    height: 100%;
+    overflow: hidden;
+    transition: transform 0.6s ease-in-out;
+    z-index: 100;
+}
+
+.container.active .overlay-container {
+    transform: translateX(-100%);
+}
+
+.overlay {
+    position: relative;
+    color: #fff;
+    left: -100%;
+    height: 100%;
+    width: 200%;
+    transform: translateX(0);
+    transition: transform 0.6s ease-in-out;
+}
+
+.container.active .overlay {
+    transform: translateX(50%);
+}
+
+.overlay-panel {
+    position: absolute;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    padding: 0 40px;
+    text-align: center;
+    top: 0;
+    height: 100%;
+    width: 50%;
+    transform: translateX(0);
+    transition: transform 0.6s ease-in-out;
+}
+
+.overlay-left {
+    background: linear-gradient(to right, #a08d7c, #a08d7c);
+    transform: translateX(-20%);
+}
+
+.container.active .overlay-left {
+    transform: translateX(0);
+}
+
+.overlay-right {
+    background: linear-gradient(to left, #a08d7c, #a08d7c);
+    right: 0;
+    transform: translateX(0);
+}
+
+.container.active .overlay-right {
+    transform: translateX(20%);
+}
+
+.circle-container {
+    position: absolute;
+    width: 200%;
+    height: 100%;
+    left: -50%;
+    transition: transform 0.6s ease-in-out;
+    z-index: -1;
+}
+
+.circle-left {
+    position: absolute;
+    left: 0;
+    width: 50%;
+    height: 100%;
+    background-color: #a08d7c;
+    border-radius: 0 100% 100% 0;
+}
+
+.circle-full {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 50%;
+    height: 100%;
+    background-color: #a08d7c;
+    border-radius: 0;
+    opacity: 0;
+    transition: opacity 0.3s ease-in-out;
+}
+
+.circle-right {
+    position: absolute;
+    right: 0;
+    width: 50%;
+    height: 100%;
+    background-color: #a08d7c;
+    border-radius: 100% 0 0 100%;
+}
+
+.container.active .circle-full {
+    opacity: 1;
+}
+
+.typing-text::after {
+    content: '|';
+    animation: blink 1s infinite;
+}
+
+@keyframes blink {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0; }
+}

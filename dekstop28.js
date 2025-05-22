@@ -62,7 +62,7 @@ document.addEventListener('DOMContentLoaded', function() {
     const copyBtn = document.querySelector('.copy-btn');
     if (copyBtn) {
         copyBtn.addEventListener('click', function() {
-            const virtualNumber = document.querySelector('.detail-value').textContent;
+            const virtualNumber = document.querySelector('.detail-valueE').textContent;
             navigator.clipboard.writeText(virtualNumber)
                 .then(() => {
                     // Change button text temporarily

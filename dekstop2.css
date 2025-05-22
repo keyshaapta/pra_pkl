@@ -478,6 +478,7 @@
 
 .box-smbln {
     padding-top: 30px;
+    display: flex;
 }
 
 .product-card {

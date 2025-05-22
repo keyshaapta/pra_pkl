@@ -8,8 +8,7 @@
   }
   
   body {
-    background-color: #c9d6ff;
-    background: linear-gradient(to right, #e2e2e2, #c9d6ff);
+    
     display: flex;
     align-items: center;
     justify-content: center;
@@ -19,16 +18,29 @@
   
 .container{
   background-color: #fff;
-  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.35);
+  z-index: 1;
   position: relative;
   overflow: hidden;
-  width: 100%;
-  height: 100%;
+  min-width: 100%;
+  height: auto;
+}
+
+.container.active {
+  /*ini tolong*/
+  /*background-color: #fff;
+  position: relative;
+  overflow: hidden;
+  min-width: 100%;
+  height: auto;
+  transition: all 0.6s ease-in-out;*/
+
+  position: relative;
+  overflow: hidden;
+  min-width: 100%;
+  height: auto;
 }
 
   .container img{
-    width: 100%;
-    height: 100%;
     transition: all 0.6s ease-in-out;
   }
   
@@ -98,7 +110,7 @@
     background-color: white;
     border-color: #fff;
     color: #9E907D;
-    padding-left: -30%;
+    margin-right: 350px;
   }
 
   .toogle-right button.hidden {
@@ -154,43 +166,70 @@
   }
   
   .sign-up, .sign-in {
-    position: absolute;
+    /*position: absolute;
     top: -100%;
     left: 0;
     width: 100%;
     height: 100%;
     transition: all 0.6s ease-in-out;
     opacity: 0;
-    z-index: 1;
+    z-index: 1;*/
+
+    position: absolute;
+  width: 50%;
+  height: 100%;
+  transition: all 0.6s ease-in-out;
+  z-index: 10; /* tingkatkan z-index untuk form agar di atas background */
+  pointer-events: auto; /* form selalu bisa diinteraksi */
   }
   
   .sign-in {
-    z-index: 2;
+    /*z-index: 2;
     opacity: 1;
     top: 0;
-    width: 50%;
+    width: 50%;*/
+
+    top: 0;
+  left: 0;
+  opacity: 1;
+  z-index: 15; /* saat aktif, lebih tinggi */
   }
   
   .container.active .sign-in {
     /* top: -100%; */
-    opacity: 0;
+    /*opacity: 0;
     z-index: 1;      
-    transform: translateX(100%);
+    transform: translateX(100%);*/
+
+    transform: translateX(-100%);
+  opacity: 0;
+  z-index: 5;
+  pointer-events: none; /* nonaktifkan saat tersembunyi */
   }
   
   .sign-up {
-    top: 0;
+    /*top: 0;
     left: 0;
     width: 50%;
     z-index: 1;
-    opacity: 0;
+    opacity: 0;*/
+
+     top: 0;
+  left: 0;
+  opacity: 0;
+  z-index: 5;
   }
   
   .container.active .sign-up {
-    transform: translateX(100%);
+    /*transform: translateX(100%);
     opacity: 1;
     z-index: 2;
-    animation: move 0.6s;
+    animation: move 0.6s;*/
+
+    transform: translateX(0);
+  opacity: 1;
+  z-index: 15; /* tingkatkan saat aktif */
+  pointer-events: auto; /* aktifkan saat visible */
   }
   
   @keyframes move {
@@ -207,15 +246,25 @@
   
   
   .toogle-container {
-  position: absolute;
+  /*position: absolute;
   top: 0;
   left: 50%;
   width: 50%;
   height: 100%;
   z-index: 1000;
   transition: all 0.6s ease-in-out;
-  overflow: visible; /* ✅ tambahkan ini */
-  pointer-events: none; /* biar gak ganggu klik elemen lain */
+  overflow: visible; /* ✅ tambahkan ini 
+  pointer-events: auto; /* biar gak ganggu klik elemen lain */
+
+   position: absolute;
+  top: 0;
+  left: 50%;
+  width: 50%;
+  height: 100%;
+  z-index: 20; /* di atas form */
+  transition: all 0.6s ease-in-out;
+  overflow: visible;
+  pointer-events: none; /* default none */
 }
 
   
@@ -225,19 +274,19 @@
   }
 
 
-  .toogle.circle-bg img {
+  /*.toogle img {
     position: absolute;
     z-index: -1;
     width: 100%;
-    height: 100%;
+    height: auto;
     left: -70%;
     transform: translateX(50%);
     transition: transform 0.6s ease-in-out;    
     will-change: transform;
-  }
-  
+  }*/
 
-  .container.active .toogle.circle-bg img{
+
+  .container.active .toogle img{
     position: absolute;
     z-index: -1;
     left: 238%;
@@ -245,33 +294,30 @@
   }
 
   .toogle {
-  height: 100%;
+  /*height: 100%;
   
   color: #fff;
-  position: relative;  /* Tetap gunakan ini */
+  position: relative;  /* Tetap gunakan ini 
   left: -100%;
   width: 200%;
   transform: translateX(0);
   transition: transform 0.6s ease-in-out;
-  z-index: 5;  /* Kurangi nilai z-index jika perlu */
-  pointer-events: none;  /* Ubah ke none agar input di bawahnya bisa diakses */
-  overflow: hidden;
-}
+  z-index: 5;  /* Kurangi nilai z-index jika perlu 
+  pointer-events: auto;  /* Ubah ke none agar input di bawahnya bisa diakses 
+  overflow: hidden;*/
 
-.circle-bg {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
+  height: 100%;
+  color: #fff;
+  position: relative;
+  left: -100%;
+  width: 200%;
+  transform: translateX(0);
   transition: transform 0.6s ease-in-out;
-  z-index: -1;
-  width: 100%;
-  height: auto;
+  z-index: 20;
+  pointer-events: none; /* default none */
 }
 
-.container.active .circle-bg {
-  transform: translate(50%, -50%); /* geser ke kanan */
-}
+
 
 
 .toogle-right p {
@@ -289,7 +335,7 @@
 }
 
 
-.toogle.circle-bg img {
+.toogle img {
   position: absolute;
   z-index: -1;  /* Pastikan gambar berada di belakang konten lain */
   width: 140%;
@@ -349,9 +395,18 @@
   .container.active .toogle {
     transform: translateX(50%);
   }
+
+  /*baru ya*/
+  .toogle button,
+.toogle-panel button {
+  pointer-events: auto !important; /* force auto untuk tombol */
+  position: relative;
+  z-index: 25; /* lebih tinggi dari toogle-container */
+  cursor: pointer;
+}
   
   .toogle-panel {
-    position: absolute;
+    /*position: absolute;
     width: 50%;
     height: 100%;
     display: flex;
@@ -362,11 +417,36 @@
     text-align: center;
     top: 0;
     transform: translateX(0);
-    transition: all 0.6s ease-in-out;
+    transition: all 0.6s ease-in-out;*/
+
+    position: absolute;
+  width: 50%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  padding: 0 30px;
+  text-align: center;
+  top: 0;
+  transform: translateX(0);
+  transition: all 0.6s ease-in-out;
+  pointer-events: none; /* default none */
   }
+
+  .sign-in input, 
+.sign-up input, 
+.sign-in button,
+.sign-up button,
+.sign-in a {
+  position: relative;
+  z-index: 15;
+  pointer-events: auto;
+}
   
   .toogle-left {
     transform: translateX(-200%);
+    
   }
   
   .container.active .toogle-left {
