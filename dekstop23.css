@@ -81,18 +81,19 @@ body {
     font-size: 14px;
 }
 
-.menu-item.active {
+/*.menu-item.active {
+    background-color: #9a8975;
+    color: #fff;
+}*/
+
+.menu-item:hover {
     background-color: #9a8975;
     color: #fff;
 }
 
-.menu-item:hover {
-    background-color: #f5f5f5;
-}
-
-.menu-item.active:hover {
+/*.menu-item.active:hover {
     background-color: #9a8975;
-}
+}*/
 
 .arrow {
     font-size: 12px;

@@ -432,25 +432,6 @@ body {
         overflow-x: auto;
     }
 }
-
-.add-button {
-    display: inline-flex;
-    align-items: center;
-    padding: 8px 16px;
-    background-color: #F5F5F5;
-    border: 1px solid #d1d5db;
-    border-radius: 6px;
-    font-size: 14px;
-    font-weight: bold;
-    color: #5E5344;
-    cursor: pointer;
-    margin-top: 20px;
-    font-family: Poppins;
-  }
-  
-  .add-button:hover {
-    background-color: #f3f4f6;
-  }
   
   .material-symbols-outlined {
     margin-right: 10px;

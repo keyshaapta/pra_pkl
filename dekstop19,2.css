@@ -56,6 +56,18 @@ body {
     border-radius: 4px;
 }
 
+.menit-dashboard {
+    display: flex;
+    align-items: center;
+    padding: 12px 20px;
+    color: grey;
+    text-decoration: none;
+    position: relative;
+    transition: all 0.3s ease;
+    margin: 0 10px;
+    border-radius: 4px;
+}
+
 .menu-item i {
     width: 24px;
     margin-right: 10px;
@@ -83,17 +95,23 @@ body {
     font-size: 14px;
 }
 
-.menu-item.active {
+.menit-text {
+    flex-grow: 1;
+    font-size: 14px;
+}
+
+/*.menu-item.active {
     background-color: #9a8975;
     color: #fff;
-}
+}*/
+
+/*.menu-item:hover {
+    background-color: #f5f5f5;
+}*/
 
 .menu-item:hover {
-    background-color: #f5f5f5;
-}
-
-.menu-item.active:hover {
     background-color: #9a8975;
+    color: #fff;
 }
 
 .arrow {

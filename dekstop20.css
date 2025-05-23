@@ -57,6 +57,11 @@ body {
     border-radius: 4px;
 }
 
+/*.menu-item.active {
+    background-color: #9a8975;
+    color: #fff;
+}*/
+
 .menu-item i {
     width: 24px;
     margin-right: 10px;
@@ -76,6 +81,11 @@ body {
 .cube {
     margin-left: -5px;
     margin-right: 13px;
+    fill: #666;
+}
+
+.cube:hover{
+    fill: white;
 }
 
 .menu-item-text {
@@ -83,17 +93,13 @@ body {
     font-size: 14px;
 }
 
-.menu-item.active {
-    background-color: #9a8975;
-    color: #fff;
-}
+/*.menu-item:hover {
+    background-color: #f5f5f5;
+}*/
 
 .menu-item:hover {
-    background-color: #f5f5f5;
-}
-
-.menu-item.active:hover {
     background-color: #9a8975;
+    color: #fff;
 }
 
 .arrow {
@@ -212,6 +218,15 @@ body {
     font-size: 40px;
     margin-left: 15px;
     margin-top: 15px;
+}
+
+.material-symbols-outlined.add {
+    color: #666;
+    font-size: 40px;
+    margin-left: 8px;
+    margin-top: 8px;
+    margin-bottom: 8px;
+    margin-right: 8px;
 }
 
 .stat-info {
@@ -430,7 +445,7 @@ body {
 .add-button {
     display: inline-flex;
     align-items: center;
-    padding: 8px 16px;
+    padding: 4px 10px;
     background-color: #F5F5F5;
     border: 1px solid #d1d5db;
     border-radius: 6px;
