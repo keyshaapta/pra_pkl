@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script 
+    src="https://kit.fontawesome.com/bd5eaea774.js" 
+    crossorigin="anonymous">
+    </script>
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined"
+    rel="stylesheet">
+    <link rel="stylesheet" href="dekstop25,3.css">
+    <title>Document</title>
+</head>
+<body>
+    <div class="sidebar">
+        <div class="sidebar-header">
+            <h2>Dashboard</h2>
+        </div>
+        <div class="sidebar-menu">
+            <div class="dashboard">
+                <img src="c:\Users\ASUS\Downloads\key-square (2).svg" alt="" class="key-square">
+                <span class="dashboard-text">Dashboard</span>
+            </div>
+            <a href="dekstop20.html" class="menu-item">
+                <img src="c:\Users\ASUS\Downloads\3d-cube-scan (1).svg" alt="" class="cube">
+                <span class="menu-item-text">Produk</span>
+                <i class="fas fa-chevron-right arrow"></i>
+            </a>
+            <a href="dekstop19,2.html" class="menu-item">
+                <i class="far fa-user"></i>
+                <span class="menu-item-text">Pelanggan</span>
+                <i class="fas fa-chevron-right arrow"></i>
+            </a>
+            <a href="dekstop23.html" class="menu-item">
+                <img src="c:\Users\ASUS\Downloads\wallet-money (1).svg" alt="" class="wallet-money">
+                <span class="menu-item-text">Pesanan</span>
+                <i class="fas fa-chevron-right arrow"></i>
+            </a>
+            <a href="dekstop25.html" class="menu-item">
+                <span class="menu-item-text">Review</span>
+                <i class="fas fa-chevron-right arrow"></i>
+            </a>
+            <a href="dekstop24.html" class="menu-item">
+                <span class="menu-item-text">Pesan</span>
+                <i class="fas fa-chevron-right arrow"></i>
+            </a>
+        </div>
+
+        <!-- Profile section with dropdown -->
+        <div class="sidebar-footer">
+            <div class="admin-profile" id="admin-profile">
+                <div class="admin-avatar"></div>
+                <div class="admin-info">
+                    <div class="admin-name">Aisyah</div>
+                    <div class="admin-role">Admin</div>
+                </div>
+                <i class="fas fa-chevron-down arrow"></i>
+                
+                <!-- Dropdown Menu -->
+                <div class="profile-dropdown" id="profile-dropdown">
+                    <button class="dropdown-item" onclick="editProfile()">
+                        <i class="fas fa-user-edit"></i>
+                        Edit Profile
+                    </button>
+                    <button class="dropdown-item" onclick="logout()">
+                        <i class="fas fa-sign-out-alt"></i>
+                        Logout
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="content">
+        <!-- Content goes here -->
+    </div>
+
+    <!-- Main Content -->
+    <div class="main-content">
+        <div class="header">
+            <div class="greeting">
+                Hello Aisyah <span>👋</span>
+            </div>
+            <div class="search-container">
+                <i class="fas fa-search"></i>
+                <input type="text" placeholder="Search">
+            </div>
+        </div>
+
+        <div class="stats-container">
+            <div class="stat-card">
+                <div class="stat-icon">
+                    <span class="material-symbols-outlined">
+                        clock_loader_40
+                        </span>
+                </div>
+                <div class="stat-info">
+                    <div class="stat-title">Total Pelanggan</div>
+                    <div class="stat-value">208</div>
+                </div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-icon">
+                    <span class="material-symbols-outlined">
+                        clock_loader_80
+                        </span>
+                </div>
+                <div class="stat-info">
+                    <div class="stat-title">Produk</div>
+                    <div class="stat-value">23</div>
+                </div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-icon">
+                    <span class="material-symbols-outlined">
+                        clock_loader_60
+                        </span>
+                </div>
+                <div class="stat-info">
+                    <div class="stat-title">Pesanan</div>
+                    <div class="stat-value">189</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Placeholder for additional content that will come later -->
+        <div id="additional-content-area"></div>
+    
+        <!-- Customer Table Section -->
+        <div class="customers-sectionpes">
+            <div class="customers-header">
+                <h2 class="customers-title">Review</h2>
+                <div class="customers-search-sort">
+                    <div class="customers-search">
+                        <i class="fas fa-search"></i>
+                        <input type="text" placeholder="Search">
+                    </div>
+                    <div class="sort-dropdown">
+                        <span>Short by:</span>
+                        <select id="sort-select">
+                            <option value="newest">Newest</option>
+                            <option value="oldest">Oldest</option>
+                            <option value="name-asc">Name (A-Z)</option>
+                            <option value="name-desc">Name (Z-A)</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+            <table class="customers-table">
+                <thead>
+                    <tr>
+                        <th>Nama Pelanggan</th>
+                        <th>Review</th>
+                        <th>Tanggal Kirim</th>
+                        <th>Aksi</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>lulu</td>
+                        <td>aku gatau mau ketik apa jadi aku asal aja yang penting isi</td>
+                        <td>22-06-2025</td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>bubu</td>
+                        <td>aku gatau mau ketik apa jadi aku asal aja yang penting isi</td>
+                        <td>22-03-2025</td>
+                        <td></td>
+                    </tr>
+                    <!-- More rows can be added dynamically via JavaScript -->
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <!-- Edit Profile Modal -->
+    <div class="modal-overlay" id="editProfileModal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3 class="modal-title">Edit Profile</h3>
+                <button class="close-btn" onclick="closeEditProfileModal()">&times;</button>
+            </div>
+            <div class="modal-body">
+                <div class="profile-photo-section">
+                    <div class="profile-photo-container">
+                        <div class="profile-photo" id="modalProfilePhoto">
+                            <i class="fas fa-user"></i>
+                            <img id="profileImage" style="display: none;" alt="Profile">
+                        </div>
+                        <button class="photo-upload-btn" onclick="document.getElementById('photoInput').click()" title="Upload Photo">
+                            <i class="fas fa-camera"></i>
+                        </button>
+                    </div>
+                    <input type="file" id="photoInput" class="file-input" accept="image/*" onchange="handlePhotoUpload(event)">
+                    <div class="photo-actions">
+                        <div class="change-photo-text" onclick="document.getElementById('photoInput').click()">
+                            Ubah Foto Profil
+                        </div>
+                        <button class="remove-photo-btn" id="removePhotoBtn" onclick="removeProfilePhoto()" style="display: none;">
+                            <i class="fas fa-trash"></i>
+                            Hapus Foto
+                        </button>
+                    </div>
+                </div>
+                
+                <form id="editProfileForm">
+                    <div class="form-group">
+                        <label class="form-label">Nama Lengkap</label>
+                        <input type="text" class="form-input" id="fullName" value="Aisyah" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label class="form-label">Email</label>
+                        <input type="email" class="form-input" id="email" value="aisyah@admin.com" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label class="form-label">Nomor Telepon</label>
+                        <input type="tel" class="form-input" id="phone" value="081234567890">
+                    </div>
+                    
+                    <div class="form-group">
+                        <label class="form-label">Role</label>
+                        <input type="text" class="form-input" id="role" value="Admin" readonly>
+                    </div>
+                </form>
+            </div>
+
+            <div class="modal-footer">
+                <button class="btn btn-cancel" onclick="closeEditProfileModal()">Batal</button>
+                <button class="btn btn-save" onclick="saveProfile()">Simpan Perubahan</button>
+            </div>
+        </div>
+    </div>
+    
+    <script src="dekstop25,3.js"></script>
+</body>
+</html>

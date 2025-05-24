@@ -1,0 +1,30 @@
+ /* Additional styles for photo actions */
+        .photo-actions {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .remove-photo-btn {
+            background: none;
+            border: none;
+            color: #dc3545;
+            font-size: 12px;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            gap: 5px;
+            padding: 5px 10px;
+            border-radius: 4px;
+            transition: all 0.3s ease;
+        }
+
+        .remove-photo-btn:hover {
+            background-color: #dc3545;
+            color: white;
+        }
+
+        .remove-photo-btn i {
+            font-size: 10px;
+        }

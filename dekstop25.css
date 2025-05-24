@@ -90,6 +90,16 @@ body {
     margin-right: 13px;
 }
 
+.cube {
+    margin-left: -5px;
+    margin-right: 13px;
+    fill: #666;
+}
+
+.cube:hover{
+    fill: white;
+}
+
 .menu-item-text {
     flex-grow: 1;
     font-size: 14px;
