@@ -86,6 +86,6 @@ document.addEventListener('DOMContentLoaded', function() {
     
     addProductBtn.addEventListener('click', function() {
       // Add your functionality here
-      alert('Tambah Produk button clicked!');
+      alert('menambah produk...');
     });
   });

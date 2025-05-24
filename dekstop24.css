@@ -57,6 +57,18 @@ body {
     border-radius: 4px;
 }
 
+.dashboard {
+    display: flex;
+    align-items: center;
+    padding: 12px 20px;
+    color: #666;
+    text-decoration: none;
+    position: relative;
+    transition: all 0.3s ease;
+    margin: 0 10px;
+    border-radius: 4px;
+}
+
 /*.menu-item.active {
     background-color: #9a8975;
     color: #fff;
@@ -89,6 +101,11 @@ body {
 }
 
 .menu-item-text {
+    flex-grow: 1;
+    font-size: 14px;
+}
+
+.dashboard-text {
     flex-grow: 1;
     font-size: 14px;
 }

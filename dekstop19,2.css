@@ -48,7 +48,7 @@ body {
     display: flex;
     align-items: center;
     padding: 12px 20px;
-    color: #9197B3;
+    color: #666;
     text-decoration: none;
     position: relative;
     transition: all 0.3s ease;
@@ -56,11 +56,11 @@ body {
     border-radius: 4px;
 }
 
-.menit-dashboard {
+.dashboard {
     display: flex;
     align-items: center;
     padding: 12px 20px;
-    color: grey;
+    color: #666;
     text-decoration: none;
     position: relative;
     transition: all 0.3s ease;
@@ -95,7 +95,7 @@ body {
     font-size: 14px;
 }
 
-.menit-text {
+.dashboard-text {
     flex-grow: 1;
     font-size: 14px;
 }
