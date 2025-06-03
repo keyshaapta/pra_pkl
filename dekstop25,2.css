@@ -191,10 +191,24 @@
             color: #333;
         }
 
+        .dropdown-item.ya a{
+            display: flex;
+            align-items: center;
+            padding: 12px 15px;
+            cursor: pointer;
+            transition: background-color 0.2s ease;
+            border: none;
+            background: none;
+            width: 100%;
+            text-align: left;
+            font-size: 14px;
+            color: #333;
+        }
+
         .dropdown-item:first-child {
             border-radius: 8px 8px 0 0;
         }
-
+        
         .dropdown-item:last-child {
             border-radius: 0 0 8px 8px;
         }

@@ -1,8 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Abril+Fatface&family=Amita:wght@400;700&family=Bebas+Neue&family=Caveat:wght@400..700&family=Coiny&family=Concert+One&family=Damion&family=Ga+Maamli&family=Jersey+15&family=League+Spartan:wght@100..900&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Titan+One&display=swap');
 
-
-        @import url('https://fonts.googleapis.com/css2?family=Abril+Fatface&family=Amita:wght@400;700&family=Bebas+Neue&family=Caveat:wght@400..700&family=Coiny&family=Concert+One&family=Damion&family=Ga+Maamli&family=Jersey+15&family=League+Spartan:wght@100..900&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Titan+One&display=swap');
-
-/* Reset and Base Styles */
 * {
     margin: 0;
     padding: 0;
@@ -72,6 +69,11 @@ body {
     border-radius: 4px;
 }
 
+/*.menu-item.active {
+    background-color: #9a8975;
+    color: #fff;
+}*/
+
 .menu-item i {
     width: 24px;
     margin-right: 10px;
@@ -81,27 +83,26 @@ body {
 .key-square {
     margin-left: -5px;
     margin-right: 13px;
-    width: 24px;
-    height: 24px;
 }
 
 .wallet-money {
     margin-left: -5px;
     margin-right: 13px;
-    width: 24px;
-    height: 24px;
 }
 
 .cube {
     margin-left: -5px;
     margin-right: 13px;
+    fill: #666;
+    /*
     width: 24px;
     height: 24px;
-    fill: #666;
     transition: fill 0.3s ease;
+    */
 }
 
-.menu-item:hover .cube {
+/*tadinya .cube:hover*/
+.menu-item:hover .cube{
     fill: white;
 }
 
@@ -115,11 +116,16 @@ body {
     font-size: 14px;
 }
 
+/*.menu-item:hover {
+    background-color: #f5f5f5;
+}*/
+
 .menu-item:hover {
     background-color: #9a8975;
     color: #fff;
 }
 
+/*ini tambahan*/
 .menu-item.active {
     background-color: #9a8975;
     color: #fff;
@@ -129,12 +135,12 @@ body {
     font-size: 12px;
 }
 
-/* Sidebar Footer and Profile */
 .sidebar-footer {
     padding: 15px;
     border-top: 1px solid #f0f0f0;
     display: flex;
     align-items: center;
+    /*ini tambahan*/
     position: relative;
 }
 
@@ -143,12 +149,14 @@ body {
     align-items: center;
     width: 100%;
     cursor: pointer;
+    /*ini tambahan*/
     position: relative;
     transition: all 0.3s ease;
     padding: 5px;
     border-radius: 8px;
 }
 
+/*ini tambahan*/
 .admin-profile:hover {
     background-color: #f8f9fa;
 }
@@ -156,15 +164,17 @@ body {
 .admin-avatar {
     width: 36px;
     height: 36px;
-    background-color:#9a8975;
+    background-color: #9a8975;
     border-radius: 50%;
     margin-right: 10px;
     overflow: hidden;
+    /*ini tambahan*/
     display: flex;
     align-items: center;
     justify-content: center;
 }
 
+/*ini tambahan .admin-avatar img , admin-avatar i*/
 .admin-avatar img {
     width: 100%;
     height: 100%;
@@ -191,7 +201,7 @@ body {
     color: #999;
 }
 
-/* Profile Dropdown Styles */
+/*ini tambahan dari .profile-dropdown sampai dropdown-item i*/
 .profile-dropdown {
     position: absolute;
     bottom: 100%;
@@ -248,11 +258,12 @@ body {
 
 /* Main Content Styles */
 .main-content {
-    margin-left: -80%;
+    margin-left: -80%; /*ini tambahan tadinya 250*/
     width: calc(100% - 250px);
     padding: 20px;
 }
 
+/*ini tambahan*/
 .content {
     margin-left: 250px;
     width: calc(100% - 250px);
@@ -287,9 +298,11 @@ body {
     font-size: 14px;
     outline: none;
     background-color: white;
+    /*ini tambahan*/
     transition: border-color 0.3s ease;
 }
 
+/*ini tambahan*/
 .search-container input:focus {
     border-color: #9a8975;
 }
@@ -302,7 +315,6 @@ body {
     color: #999;
 }
 
-/* Stats Container */
 .stats-container {
     display: flex;
     gap: 20px;
@@ -317,9 +329,11 @@ body {
     display: flex;
     align-items: center;
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+    /*ini tambahan*/
     transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
 
+/*ini tambahan*/
 .stat-card:hover {
     transform: translateY(-2px);
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
@@ -331,14 +345,18 @@ body {
     background-color: #9a8975;
     border-radius: 50%;
     margin-right: 20px;
+    /*ini tambahan*/
     display: flex;
     align-items: center;
     justify-content: center;
 }
 
-.material-symbols-outlined {
+.material-symbols-outlined{
     color: white;
     font-size: 40px;
+    /*disini ada, sebelah gaada*/
+    /*margin-left: 15px;
+    margin-top: 15px;*/
 }
 
 .stat-info {
@@ -398,9 +416,11 @@ body {
     font-size: 14px;
     outline: none;
     background-color: #f7f7f7;
+    /*ini tambahan*/
     transition: border-color 0.3s ease;
 }
 
+/*ini tambahan*/
 .customers-search input:focus {
     border-color: #9a8975;
     background-color: white;
@@ -433,14 +453,15 @@ body {
     font-size: 14px;
     outline: none;
     cursor: pointer;
+    /*ini tambahan*/
     transition: border-color 0.3s ease;
 }
 
+/*ini tambahan*/
 .sort-dropdown select:focus {
     border-color: #9a8975;
 }
 
-/* Table Styles */
 .customers-table {
     width: 100%;
     border-collapse: collapse;
@@ -453,6 +474,7 @@ body {
     color: #888;
     font-weight: normal;
     border-bottom: 1px solid #e0e0e0;
+    /*ini tambahan*/
     background-color: #f8f9fa;
 }
 
@@ -463,6 +485,7 @@ body {
     border-bottom: 1px solid #e0e0e0;
 }
 
+/*ini tambahan*/
 .customers-table tbody tr {
     transition: background-color 0.2s ease;
 }
@@ -471,11 +494,12 @@ body {
     background-color: #f9f9f9;
 }
 
+/*ini tambahan*/
 .customers-table tbody tr:last-child td {
     border-bottom: none;
 }
 
-/* Modal Styles */
+/*ini tambahan dari modal-overlay sampai additional-content-area*/
 .modal-overlay {
     position: fixed;
     top: 0;
@@ -550,7 +574,6 @@ body {
     padding: 25px;
 }
 
-/* Profile Photo Section */
 .profile-photo-section {
     text-align: center;
     margin-bottom: 25px;
@@ -651,7 +674,6 @@ body {
     font-size: 10px;
 }
 
-/* Form Styles */
 .form-group {
     margin-bottom: 20px;
 }
@@ -719,13 +741,11 @@ body {
     background-color: #7a6b5a;
 }
 
-/* Additional Content Area */
 #additional-content-area {
     margin-bottom: 30px;
 }
 
-/* Responsive Design */
-@media (max-width: 1200px) {
+@media (max-width: 1200px) { /*ini tambahan tapi gatau disini 992 disana 1200. tadinya 992*/
     .stats-container {
         flex-wrap: wrap;
     }
@@ -755,11 +775,13 @@ body {
 
     .sort-dropdown {
         width: 100%;
+        /*ini tambahan*/
         justify-content: space-between;
     }
 
     .sort-dropdown select {
         flex-grow: 1;
+        /*ini tambahan*/
         margin-left: 10px;
     }
 }
@@ -768,18 +790,21 @@ body {
     .sidebar {
         width: 70px;
         overflow: visible;
+        /*ini tambahan tapi cuma ganti overflow tadinya hidden*/
     }
 
     .sidebar-header h2 {
         display: none;
     }
 
-    .menu-item-text, 
+    /*ini tambahan tadinya cuma menu-item-text, admin-info*/
+    .menu-item-text,
     .dashboard-text,
     .admin-info {
         display: none;
     }
 
+    /*ini tambahan tadinya cuma menu-item i*/
     .menu-item i,
     .key-square,
     .wallet-money,
@@ -788,6 +813,7 @@ body {
         font-size: 20px;
     }
 
+    /*ini tambahan tadinya cuma menu-item*/
     .menu-item,
     .dashboard {
         padding: 15px 0;
@@ -806,6 +832,7 @@ body {
         justify-content: center;
     }
 
+    /*ini tambahan tadinya cuma main-content*/
     .main-content,
     .content {
         margin-left: 70px;
@@ -833,9 +860,11 @@ body {
     .customers-table {
         display: block;
         overflow-x: auto;
-        white-space: nowrap;
+        /*ini tambahan*/
+         white-space: nowrap;
     }
 
+    /*ini tambahan dari cutomers-table th sampai btn*/
     .customers-table th,
     .customers-table td {
         min-width: 120px;
@@ -859,6 +888,7 @@ body {
     }
 }
 
+/*ini tambahan dari media max-width: 480 sampai view-photo body di media*/
 @media (max-width: 480px) {
     .main-content,
     .content {
@@ -928,3 +958,117 @@ select:focus {
 ::-webkit-scrollbar-thumb:hover {
     background: #7a6b5a;
 }
+
+/* View Photo Modal Styles */
+.view-photo-modal-content {
+    background-color: white;
+    border-radius: 12px;
+    padding: 0;
+    width: 90%;
+    max-width: 600px;
+    max-height: 90vh;
+    overflow: hidden;
+    transform: scale(0.7);
+    transition: transform 0.3s ease;
+}
+
+.modal-overlay.show .view-photo-modal-content {
+    transform: scale(1);
+}
+
+.view-photo-header {
+    padding: 15px 20px;
+    border-bottom: 1px solid #e0e0e0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #f8f9fa;
+}
+
+.view-photo-title {
+    font-size: 18px;
+    font-weight: bold;
+    color: #333;
+    margin: 0;
+}
+
+.view-photo-body {
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #f8f9fa;
+}
+
+.view-photo-image {
+    max-width: 100%;
+    max-height: 400px;
+    width: auto;
+    height: auto;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    object-fit: contain;
+    transition: transform 0.3s ease;
+}
+
+.view-photo-image:hover {
+    transform: scale(1.02);
+}
+
+/* Responsive adjustments for view photo modal */
+@media (max-width: 768px) {
+    .view-photo-modal-content {
+        width: 95%;
+        max-width: none;
+    }
+    
+    .view-photo-image {
+        max-height: 300px;
+    }
+    
+    .view-photo-body {
+        padding: 15px;
+    }
+}
+
+@media (max-width: 480px) {
+    .view-photo-image {
+        max-height: 250px;
+    }
+    
+    .view-photo-body {
+        padding: 10px;
+    }
+}
+
+.material-symbols-outlined.add {
+    color: #666;
+    font-size: 40px;
+    margin-left: 8px;
+    margin-top: 8px;
+    margin-bottom: 8px;
+    margin-right: 8px;
+}
+
+.add-button {
+    display: inline-flex;
+    align-items: center;
+    padding: 8px 16px;
+    background-color: #F5F5F5;
+    border: 1px solid #d1d5db;
+    border-radius: 6px;
+    font-size: 14px;
+    font-weight: bold;
+    color: #5E5344;
+    cursor: pointer;
+    margin-top: -5px;
+    font-family: Poppins;
+  }
+  
+  .add-button:hover {
+    background-color: #f3f4f6;
+  }
+  
+  /*.material-symbols-outlined {
+    margin-right: 10px;
+  }*/

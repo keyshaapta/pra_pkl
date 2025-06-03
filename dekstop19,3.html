@@ -9,7 +9,7 @@
     </script>
     <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined"
     rel="stylesheet">
-    <link rel="stylesheet" href="dekstop20.css">
+    <link rel="stylesheet" href="dekstop19,3.css">
     <title>Document</title>
 </head>
 <body>
@@ -29,7 +29,7 @@
                 <span class="menu-item-text">Produk</span>
                 <i class="fas fa-chevron-right arrow"></i>
             </a>
-            <a href="dekstop19,3.html" class="menu-item">
+            <a href="dekstop19,3.html" class="menu-item ">
                 <i class="far fa-user"></i>
                 <span class="menu-item-text">Pelanggan</span>
                 <i class="fas fa-chevron-right arrow"></i>
@@ -49,13 +49,29 @@
             </a>
         </div>
         <div class="sidebar-footer">
-            <div class="admin-profile">
-                <div class="admin-avatar"></div>
+            <div class="admin-profile" id="admin-profile">
+                <div class="admin-avatar">
+                    <i class="fa-solid fa-circle-user"></i>
+                </div>
                 <div class="admin-info">
                     <div class="admin-name">Aisyah</div>
                     <div class="admin-role">Admin</div>
                 </div>
                 <i class="fas fa-chevron-down arrow"></i>
+
+                <!-- Dropdown Menu -->
+                <div class="profile-dropdown" id="profile-dropdown">
+                    <button class="dropdown-item" onclick="editProfile()">
+                        <i class="fas fa-user-edit"></i>
+                        Edit Profile
+                    </button>
+                    <a href="login.html">
+                        <button class="dropdown-item" onclick="logout()">
+                            <i class="fas fa-sign-out-alt"></i>
+                            Logout
+                        </button>
+                    </a>
+                </div>
             </div>
         </div>
     </div>
@@ -119,7 +135,7 @@
     <!-- Customer Table Section -->
     <div class="customers-sectionpes">
         <div class="customers-header">
-            <h2 class="customers-title">Produk</h2>
+            <h2 class="customers-title">Pelanggan</h2>
             <div class="customers-search-sort">
                 <div class="customers-search">
                     <i class="fas fa-search"></i>
@@ -139,45 +155,104 @@
         <table class="customers-table">
             <thead>
                 <tr>
-                    <th>Nama Produk</th>
-                    <th>kategori</th>
-                    <th>Deskripsi</th>
-                    <th>Harga</th>
-                    <th>Stok</th>
+                    <th>Nama Pelanggan</th>
+                    <th>Nomor Telepon</th>
+                    <th>Email</th>
+                    <th>Tanggal Pembuatan</th>
                 </tr>
             </thead>
             <tbody>
                 <tr>
-                    <td>Croissant</td>
+                    <td>Aisyah</td>
                     <td>083444444444</td>
-                    <td>Lorem Ipsum</td>
-                    <td>Rp 18.000</td>
-                    <td>30</td>
+                    <td>aisyah@gmail</td>
+                    <td>18-03-2021</td>
                 </tr>
                 <tr>
-                    <td>Choux</td>
+                    <td>Keysha</td>
                     <td>08666666666</td>
-                    <td>Lorem Ipsum</td>
-                    <td>Rp 18.000</td>
-                    <td>30</td>
+                    <td>key@gmail</td>
+                    <td>23-03-2022</td>
                 </tr>
                 <!-- More rows can be added dynamically via JavaScript -->
             </tbody>
         </table>
     </div>
-
-    <button class="add-button" id="addProductBtn">
-        <span class="material-symbols-outlined add" >
-            add_circle
-        </span>
-        Tambah Produk
-    </button>
 </div>
 
+<!-- Edit Profile Modal -->
+    <div class="modal-overlay" id="editProfileModal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3 class="modal-title">Edit Profile</h3>
+                <button class="close-btn" onclick="closeEditProfileModal()">&times;</button>
+            </div>
+            <div class="modal-body">
+                <div class="profile-photo-section">
+                    <div class="profile-photo-container">
+                        <div class="profile-photo" id="modalProfilePhoto">
+                            <i class="fas fa-user"></i>
+                            <img id="profileImage" style="display: none;" alt="Profile">
+                        </div>
+                        <button class="photo-upload-btn" onclick="document.getElementById('photoInput').click()" title="Upload Photo">
+                            <i class="fas fa-camera"></i>
+                        </button>
+                    </div>
+                    <input type="file" id="photoInput" class="file-input" accept="image/*" onchange="handlePhotoUpload(event)">
+                    <div class="photo-actions">
+                        <div class="change-photo-text" onclick="document.getElementById('photoInput').click()">
+                            Ubah Foto Profil
+                        </div>
+                        <button class="remove-photo-btn" id="removePhotoBtn" onclick="removeProfilePhoto()" style="display: none;">
+                            <i class="fas fa-trash"></i>
+                            Hapus Foto
+                        </button>
+                    </div>
+                </div>
+                
+                <form id="editProfileForm">
+                    <div class="form-group">
+                        <label class="form-label">Nama Lengkap</label>
+                        <input type="text" class="form-input" id="fullName" value="Aisyah" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label class="form-label">Email</label>
+                        <input type="email" class="form-input" id="email" value="aisyah@admin.com" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label class="form-label">Nomor Telepon</label>
+                        <input type="tel" class="form-input" id="phone" value="081234567890">
+                    </div>
+                    
+                    <div class="form-group">
+                        <label class="form-label">Role</label>
+                        <input type="text" class="form-input" id="role" value="Admin" readonly>
+                    </div>
+                </form>
+            </div>
 
+            <div class="modal-footer">
+                <button class="btn btn-cancel" onclick="closeEditProfileModal()">Batal</button>
+                <button class="btn btn-save" onclick="saveProfile()">Simpan Perubahan</button>
+            </div>
+        </div>
+    </div>
 
-    
-    
-        <script src="dekstop20.js"></script>
+    <!-- View Profile Photo Modal -->
+<div class="modal-overlay" id="viewPhotoModal">
+    <div class="view-photo-modal-content">
+        <div class="view-photo-header">
+            <h3 class="view-photo-title">Foto Profil</h3>
+            <button class="close-btn" onclick="closeViewPhotoModal()">&times;</button>
+        </div>
+        <div class="view-photo-body">
+            <img id="viewPhotoImg" alt="Profile Photo" class="view-photo-image">
+        </div>
+    </div>
+</div>
+
+        <script src="dekstop19,3.js"></script>
 </body>
 </html>

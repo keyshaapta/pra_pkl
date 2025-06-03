@@ -50,18 +50,56 @@
 
 .header .logo img {
     height: 45px;
+    transition: all 0.3s ease;
+}
+
+/* Neon glow effect for logo */
+.header .logo img:hover {
+    filter: drop-shadow(0 0 10px #887964) 
+            drop-shadow(0 0 20px #887964) 
+            drop-shadow(0 0 30px #887964);
+    transform: scale(1.05);
 }
 
 .header .navbar a {
     color: #887964;
     font-size: 20px;
     margin: 0 1rem;
+    transition: all 0.3s ease;
+    position: relative;
+    text-decoration: none;
 }
 
+/* Neon glow effect for navbar links */
 .header .navbar a:hover {
     color: #5E5344;
+    text-shadow: 
+        0 0 5px #887964,
+        0 0 10px #887964,
+        0 0 15px #887964,
+        0 0 20px #887964,
+        0 0 35px #887964,
+        0 0 40px #887964;
     padding-top: 0.5rem;
     padding-bottom: 0.5rem;
+    transform: translateY(-2px);
+}
+
+/* Optional: Add underline glow effect */
+.header .navbar a::after {
+    content: '';
+    position: absolute;
+    bottom: -5px;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background: linear-gradient(90deg, transparent, #887964, transparent);
+    transition: width 0.3s ease;
+    box-shadow: 0 0 8px #887964;
+}
+
+.header .navbar a:hover::after {
+    width: 100%;
 }
 
 .header .navbar.active{
@@ -78,10 +116,25 @@
     font-size: 20px;
     margin-left: 2rem;
     z-index: 10;
+    transition: all 0.3s ease;
+    border-radius: 50%;
+    padding: 8px;
 }
 
+/* Neon glow effect for icons */
 .header .icons div:hover {
     color: #5E5344;
+    text-shadow: 
+        0 0 5px #887964,
+        0 0 10px #887964,
+        0 0 15px #887964,
+        0 0 20px #887964;
+    box-shadow: 
+        0 0 10px rgba(136, 121, 100, 0.3),
+        0 0 20px rgba(136, 121, 100, 0.2),
+        0 0 30px rgba(136, 121, 100, 0.1);
+    transform: scale(1.1);
+    background: rgba(136, 121, 100, 0.1);
 }
 
 .header .icons .menu-icon {
@@ -101,10 +154,16 @@
     width: 20rem;
     height: 2.5rem;
     background-color: white;
+    border-radius: 25px;
+    overflow: hidden;
+    transition: all 0.3s ease;
 }
 
 .header .search-form.active {
     right: 7%;
+    box-shadow: 
+        0 0 10px rgba(136, 121, 100, 0.3),
+        0 0 20px rgba(136, 121, 100, 0.2);
 }
 
 .header .search-form input {
@@ -114,6 +173,16 @@
     font-size: 20px;
     color: black;
     text-transform: none;
+    border: none;
+    outline: none;
+    background: transparent;
+    transition: all 0.3s ease;
+}
+
+/* Neon glow effect for search input focus */
+.header .search-form input:focus {
+    background: rgba(136, 121, 100, 0.05);
+    box-shadow: inset 0 0 10px rgba(136, 121, 100, 0.2);
 }
 
 .header .search-form label {
@@ -121,10 +190,132 @@
     font-size: 20px;
     padding-right: 20px;
     cursor: pointer;
+    transition: all 0.3s ease;
+    border-radius: 50%;
+    padding: 8px;
 }
 
+/* Neon glow effect for search label */
 .header .search-form label:hover {
     color: #887964;
+    text-shadow: 
+        0 0 5px #887964,
+        0 0 10px #887964,
+        0 0 15px #887964;
+    box-shadow: 
+        0 0 8px rgba(136, 121, 100, 0.4),
+        0 0 16px rgba(136, 121, 100, 0.2);
+    transform: scale(1.1);
+    background: rgba(136, 121, 100, 0.1);
+}
+
+.header .cart-items-container {
+    position: absolute;
+    top: 100%;
+    right: -100%;
+    width: 25rem;
+    background-color: white;
+    height: 84vh;
+    border: solid 1px #5E5344;
+    padding: 0.8rem;
+    border-radius: 10px;
+    transition: all 0.3s ease;
+}
+
+.header .cart-items-container.active {
+    right: 0;
+    box-shadow: 
+        0 0 20px rgba(136, 121, 100, 0.3),
+        0 0 40px rgba(136, 121, 100, 0.1);
+}
+
+.header .cart-items-container .cart-item {
+    display: flex;
+    align-items: center;
+    margin: 10px;
+    border: solid 1px #5E5344;
+    position: relative;
+    gap: 1rem;
+    border-radius: 8px;
+    transition: all 0.3s ease;
+}
+
+/* Neon glow effect for cart items */
+.header .cart-items-container .cart-item:hover {
+    border-color: #887964;
+    box-shadow: 
+        0 0 10px rgba(136, 121, 100, 0.3),
+        0 0 20px rgba(136, 121, 100, 0.1);
+    transform: translateY(-2px);
+}
+
+.header .cart-items-container .cart-item img {
+    width: 7rem;
+    transition: all 0.3s ease;
+}
+
+.header .cart-items-container .cart-item:hover img {
+    filter: brightness(1.1);
+}
+
+.header .cart-items-container .cart-item span {
+    position: absolute;
+    top: 5%;
+    right: 4%;
+    font-size: 2rem;
+    color: #5E5344;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    border-radius: 50%;
+    padding: 4px;
+}
+
+/* Neon glow effect for cart item close button */
+.header .cart-items-container .cart-item span:hover {
+    color: #887964;
+    text-shadow: 
+        0 0 5px #ff4444,
+        0 0 10px #ff4444,
+        0 0 15px #ff4444;
+    box-shadow: 
+        0 0 8px rgba(255, 68, 68, 0.4),
+        0 0 16px rgba(255, 68, 68, 0.2);
+    transform: scale(1.1);
+    background: rgba(255, 68, 68, 0.1);
+}
+
+.header .cart-items-container .cart-item .content h3 {
+    font-size: 18px;
+    color: #5E5344;
+    padding-bottom: 8px;
+    margin-left: 10px;
+    transition: all 0.3s ease;
+}
+
+.header .cart-items-container .cart-item:hover .content h3 {
+    text-shadow: 0 0 8px rgba(136, 121, 100, 0.5);
+}
+
+.header .cart-items-container .cart-item .content .price {
+    font-size: 15px;
+    color: #5E5344;
+}
+
+.header .cart-items-container .btn {
+    width: 95%;
+    text-align: center;
+    margin-right: 10px;
+    transition: all 0.3s ease;
+    border-radius: 25px;
+}
+
+/* Neon glow effect for buttons */
+.header .cart-items-container .btn:hover {
+    box-shadow: 
+        0 0 10px rgba(136, 121, 100, 0.5),
+        0 0 20px rgba(136, 121, 100, 0.3),
+        0 0 30px rgba(136, 121, 100, 0.1);
+    transform: translateY(-2px);
 }
 
 @media (max-width:991px) {
@@ -151,6 +342,14 @@
         background: white;
         width: 30rem;
         height: calc(100vh - 9.5rem);
+        border-radius: 0 0 0 15px;
+        transition: all 0.3s ease;
+    }
+
+    .header .navbar.active {
+        box-shadow: 
+            0 0 20px rgba(136, 121, 100, 0.3),
+            0 0 40px rgba(136, 121, 100, 0.1);
     }
 
     .header .navbar a{
@@ -159,7 +358,23 @@
         margin: 1.5rem;
         padding: .5rem;
         font-size: 2rem;
+        border-radius: 8px;
+        transition: all 0.3s ease;
     }
+
+    /* Mobile navbar links neon glow */
+    .header .navbar a:hover {
+        text-shadow: 
+            0 0 5px #887964,
+            0 0 10px #887964,
+            0 0 15px #887964;
+        box-shadow: 
+            0 0 10px rgba(136, 121, 100, 0.3),
+            0 0 20px rgba(136, 121, 100, 0.1);
+        background: rgba(136, 121, 100, 0.1);
+        transform: translateX(5px);
+    }
+
 }
 
 .container {

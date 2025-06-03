@@ -1,6 +1,5 @@
 
-
-        @import url('https://fonts.googleapis.com/css2?family=Abril+Fatface&family=Amita:wght@400;700&family=Bebas+Neue&family=Caveat:wght@400..700&family=Coiny&family=Concert+One&family=Damion&family=Ga+Maamli&family=Jersey+15&family=League+Spartan:wght@100..900&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Titan+One&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Abril+Fatface&family=Amita:wght@400;700&family=Bebas+Neue&family=Caveat:wght@400..700&family=Coiny&family=Concert+One&family=Damion&family=Ga+Maamli&family=Jersey+15&family=League+Spartan:wght@100..900&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Titan+One&display=swap');
 
 /* Reset and Base Styles */
 * {
@@ -927,4 +926,86 @@ select:focus {
 
 ::-webkit-scrollbar-thumb:hover {
     background: #7a6b5a;
+}
+
+/* View Photo Modal Styles */
+.view-photo-modal-content {
+    background-color: white;
+    border-radius: 12px;
+    padding: 0;
+    width: 90%;
+    max-width: 600px;
+    max-height: 90vh;
+    overflow: hidden;
+    transform: scale(0.7);
+    transition: transform 0.3s ease;
+}
+
+.modal-overlay.show .view-photo-modal-content {
+    transform: scale(1);
+}
+
+.view-photo-header {
+    padding: 15px 20px;
+    border-bottom: 1px solid #e0e0e0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #f8f9fa;
+}
+
+.view-photo-title {
+    font-size: 18px;
+    font-weight: bold;
+    color: #333;
+    margin: 0;
+}
+
+.view-photo-body {
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #f8f9fa;
+}
+
+.view-photo-image {
+    max-width: 100%;
+    max-height: 400px;
+    width: auto;
+    height: auto;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    object-fit: contain;
+    transition: transform 0.3s ease;
+}
+
+.view-photo-image:hover {
+    transform: scale(1.02);
+}
+
+/* Responsive adjustments for view photo modal */
+@media (max-width: 768px) {
+    .view-photo-modal-content {
+        width: 95%;
+        max-width: none;
+    }
+    
+    .view-photo-image {
+        max-height: 300px;
+    }
+    
+    .view-photo-body {
+        padding: 15px;
+    }
+}
+
+@media (max-width: 480px) {
+    .view-photo-image {
+        max-height: 250px;
+    }
+    
+    .view-photo-body {
+        padding: 10px;
+    }
 }

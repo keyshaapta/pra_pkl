@@ -151,6 +151,22 @@ function editProfile() {
     }
 }
 
+// Function to view profile photo in zoom modal
+function viewProfilePhoto() {
+    if (currentProfilePhoto) {
+        const viewPhotoModal = document.getElementById('viewPhotoModal');
+        const viewPhotoImg = document.getElementById('viewPhotoImg');
+        
+        viewPhotoImg.src = currentProfilePhoto;
+        viewPhotoModal.classList.add('show');
+    }
+}
+
+// Function to close view photo modal
+function closeViewPhotoModal() {
+    document.getElementById('viewPhotoModal').classList.remove('show');
+}
+
 function closeEditProfileModal() {
     document.getElementById('editProfileModal').classList.remove('show');
     
@@ -249,6 +265,15 @@ function updateSidebarAvatar(photoData) {
         img.style.width = '100%';
         img.style.height = '100%';
         img.style.objectFit = 'cover';
+        img.style.cursor = 'pointer'; // Add cursor pointer for clickable image
+        img.title = 'Klik untuk melihat foto profil'; // Add tooltip
+        
+        // Add click event to view photo
+        img.addEventListener('click', function(e) {
+            e.stopPropagation(); // Prevent dropdown from opening
+            viewProfilePhoto();
+        });
+        
         adminAvatar.appendChild(img);
     } else {
         // Show default icon when no photo (FIXED: Added default icon)
@@ -314,8 +339,14 @@ function logout() {
 // Close modal when clicking outside
 document.addEventListener('click', function(e) {
     const modal = document.getElementById('editProfileModal');
+    const viewModal = document.getElementById('viewPhotoModal');
+    
     if (e.target === modal) {
         closeEditProfileModal();
+    }
+    
+    if (e.target === viewModal) {
+        closeViewPhotoModal();
     }
 });
 
@@ -324,8 +355,14 @@ document.addEventListener('keydown', function(e) {
     // Close modal with Escape key
     if (e.key === 'Escape') {
         const modal = document.getElementById('editProfileModal');
+        const viewModal = document.getElementById('viewPhotoModal');
+        
         if (modal.classList.contains('show')) {
             closeEditProfileModal();
+        }
+        
+        if (viewModal.classList.contains('show')) {
+            closeViewPhotoModal();
         }
     }
 });
