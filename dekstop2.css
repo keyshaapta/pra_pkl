@@ -662,13 +662,41 @@
     font-family: League Spartan;
 }
 
-.product-image {
+.product-image-container {
+            position: relative;
+            width: 220px;
+            height: 180px;
+            margin-bottom: 10px;
+            margin-top: 10px;
+            overflow: hidden;
+            border-radius: 10px;
+        }
+
+        .product-image {
     width: 220px;
     height: 180px;
-    object-fit: contain;
+    /*object-fit: contain;*/
     margin-bottom: 10px;
     margin-top: 10px;
+    /* ini tambahan */
+    object-fit: cover;
+    transition: opacity 0.3s ease;
+    position: absolute;
 }
+
+        .product-image.hover-image {
+            opacity: 0;
+        }
+
+        .product-image-container:hover .product-image.main-image {
+            opacity: 0;
+        }
+
+        .product-image-container:hover .product-image.hover-image {
+            opacity: 1;
+        }
+
+
 
 .rating {
     font-family: League Spartan;

@@ -791,7 +791,7 @@
     align-items: center;
     justify-content: center;
     cursor: pointer;
-    width: 45px;
+    width: 55px;
 }
 
 .btn-favorite:hover {
@@ -802,7 +802,7 @@
     background-color: #5E5344;
     color: white;
     border: none;
-    padding: 8px 15px;
+    padding: 8px 75px;
     border-radius: 10px;
     display: flex;
     align-items: center;
