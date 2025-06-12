@@ -1,115 +1,115 @@
-document.addEventListener('DOMContentLoaded', function() {
-    // Load saved profile data on page load
-    loadSavedProfile();
-    
-    // Sidebar menu item active state
-    const menuItems = document.querySelectorAll('.menu-item');
-    
-    menuItems.forEach(item => {
-        item.addEventListener('click', function(e) {
-            // Remove active class from all items
-            menuItems.forEach(menuItem => {
-                menuItem.classList.remove('active');
-            });
-            
-            // Add active class to clicked item
-            this.classList.add('active');
-        });
-    });
+// Sample data for the message table
+const messageData = [
+    {
+        date: '11-03-2025',
+        name: '083444444444',
+        product: 'Croissant(3)',
+        address: 'Jl. Adakala, Senayan',
+        total: 'Rp 18.000',
+        status: 'Disiapkan'
+    },
+    {
+        date: '09-03-2025',
+        name: '08666666666',
+        product: 'Danish Pastry(2)',
+        address: 'Jl. Adakala, Senayan',
+        total: 'Rp 18.000',
+        status: 'Diterima'
+    }
+];
 
-    // Global search functionality
-    const globalSearchInput = document.querySelector('.search-container input');
-    globalSearchInput.addEventListener('keyup', function(e) {
-        console.log('Global search for:', this.value);
-    });
-
-    // Customer table search functionality
-    const customerSearchInput = document.querySelector('.customers-search input');
-    customerSearchInput.addEventListener('keyup', function(e) {
-        const searchValue = this.value.toLowerCase();
-        const tableRows = document.querySelectorAll('.customers-table tbody tr');
-        
-        tableRows.forEach(row => {
-            const text = row.textContent.toLowerCase();
-            if(text.includes(searchValue)) {
-                row.style.display = '';
-            } else {
-                row.style.display = 'none';
-            }
-        });
-    });
-
-    // Sort dropdown functionality
-    const sortSelect = document.getElementById('sort-select');
-    sortSelect.addEventListener('change', function() {
-        const sortValue = this.value;
-        const tableBody = document.querySelector('.customers-table tbody');
-        const rows = Array.from(tableBody.querySelectorAll('tr'));
-        
-        rows.sort((a, b) => {
-            let aValue, bValue;
-            
-            switch(sortValue) {
-                case 'newest':
-                    aValue = new Date(a.cells[3].textContent.split('-').reverse().join('-'));
-                    bValue = new Date(b.cells[3].textContent.split('-').reverse().join('-'));
-                    return bValue - aValue;
-                case 'oldest':
-                    aValue = new Date(a.cells[3].textContent.split('-').reverse().join('-'));
-                    bValue = new Date(b.cells[3].textContent.split('-').reverse().join('-'));
-                    return aValue - bValue;
-                case 'name-asc':
-                    aValue = a.cells[0].textContent;
-                    bValue = b.cells[0].textContent;
-                    return aValue.localeCompare(bValue);
-                case 'name-desc':
-                    aValue = a.cells[0].textContent;
-                    bValue = b.cells[0].textContent;
-                    return bValue.localeCompare(aValue);
-                default:
-                    return 0;
-            }
-        });
-        
-        // Clear the table body
-        while(tableBody.firstChild) {
-            tableBody.removeChild(tableBody.firstChild);
-        }
-        
-        // Append sorted rows
-        rows.forEach(row => {
-            tableBody.appendChild(row);
-        });
-    });
-
-    /*ini tambahan*/
-
-    // Profile dropdown functionality
-    const adminProfile = document.getElementById('admin-profile');
-    const profileDropdown = document.getElementById('profile-dropdown');
-
-    adminProfile.addEventListener('click', function(e) {
-        e.stopPropagation();
-        profileDropdown.classList.toggle('show');
-    });
-
-    // Close dropdown when clicking outside
-    document.addEventListener('click', function(e) {
-        if (!adminProfile.contains(e.target)) {
-            profileDropdown.classList.remove('show');
-        }
-    });
-
-    // Prevent dropdown from closing when clicking inside it
-    profileDropdown.addEventListener('click', function(e) {
-        e.stopPropagation();
-    });
-});
-
-// Variable to store current profile photo
+// TAMBAHAN: Variable to store current profile photo
 let currentProfilePhoto = null;
 
-// Load saved profile data from memory
+// Function to populate the message table
+function populateMessageTable() {
+    const tableBody = document.querySelector('.customers-table tbody'); // PERBAIKAN: sesuaikan dengan HTML
+    tableBody.innerHTML = '';
+
+    messageData.forEach(customer => {
+        const row = document.createElement('tr');
+        
+        row.innerHTML = `
+            <td>${customer.date}</td>
+            <td>${customer.name}</td>
+            <td>${customer.product}</td>
+            <td>${customer.address}</td>
+            <td>${customer.total}</td>
+            <td>${customer.status}</td>
+        `;
+        
+        tableBody.appendChild(row);
+    });
+}
+
+// Function to handle sorting
+function handleSort() {
+    const sortDropdown = document.getElementById('sort-select'); // PERBAIKAN: gunakan getElementById
+    if (sortDropdown) {
+        sortDropdown.addEventListener('change', function() {
+            const sortOption = this.value;
+            
+            if (sortOption === 'newest') { // PERBAIKAN: gunakan value yang sama dengan HTML
+                messageData.sort((a, b) => {
+                    const dateA = new Date(a.date.split('-').reverse().join('-'));
+                    const dateB = new Date(b.date.split('-').reverse().join('-'));
+                    return dateB - dateA;
+                });
+            } else if (sortOption === 'oldest') { // PERBAIKAN: gunakan value yang sama dengan HTML
+                messageData.sort((a, b) => {
+                    const dateA = new Date(a.date.split('-').reverse().join('-'));
+                    const dateB = new Date(b.date.split('-').reverse().join('-'));
+                    return dateA - dateB;
+                });
+            } else if (sortOption === 'name-asc') { // PERBAIKAN: gunakan value yang sama dengan HTML
+                messageData.sort((a, b) => a.name.localeCompare(b.name));
+            } else if (sortOption === 'name-desc') { // PERBAIKAN: gunakan value yang sama dengan HTML
+                messageData.sort((a, b) => b.name.localeCompare(a.name));
+            }
+            
+            populateMessageTable();
+        });
+    }
+}
+
+// Function to handle search
+function handleSearch() {
+    const searchInput = document.querySelector('.customers-search input'); // PERBAIKAN: sesuaikan dengan HTML
+    if (searchInput) {
+        searchInput.addEventListener('input', function() {
+            const searchTerm = this.value.toLowerCase();
+            
+            const filteredData = messageData.filter(customer => {
+                return customer.date.toLowerCase().includes(searchTerm) ||
+                       customer.name.toLowerCase().includes(searchTerm) ||
+                       customer.product.toLowerCase().includes(searchTerm) ||
+                       customer.address.toLowerCase().includes(searchTerm) ||
+                       customer.total.toLowerCase().includes(searchTerm) ||
+                       customer.status.toLowerCase().includes(searchTerm) ;
+            });
+            
+            const tableBody = document.querySelector('.customers-table tbody'); // PERBAIKAN: sesuaikan dengan HTML
+            tableBody.innerHTML = '';
+            
+            filteredData.forEach(customer => {
+                const row = document.createElement('tr');
+                
+                row.innerHTML = `
+                    <td>${customer.date}</td>
+                    <td>${customer.name}</td>
+                    <td>${customer.product}</td>
+                    <td>${customer.address}</td>
+                    <td>${customer.total}</td>
+                    <td>${customer.status}</td>
+                `;
+                
+                tableBody.appendChild(row);
+            });
+        });
+    }
+}
+
+// TAMBAHAN: Load saved profile data from memory
 function loadSavedProfile() {
     // Simulate loading saved data (in real app, this would come from server/database)
     const savedData = {
@@ -133,7 +133,7 @@ function loadSavedProfile() {
     }
 }
 
-// Profile dropdown functions
+// TAMBAHAN: Profile dropdown functions
 function editProfile() {
     document.getElementById('profile-dropdown').classList.remove('show');
     document.getElementById('editProfileModal').classList.add('show');
@@ -153,7 +153,7 @@ function editProfile() {
     }
 }
 
-// Function to view profile photo in zoom modal
+// TAMBAHAN: Function to view profile photo in zoom modal
 function viewProfilePhoto() {
     if (currentProfilePhoto) {
         const viewPhotoModal = document.getElementById('viewPhotoModal');
@@ -164,11 +164,12 @@ function viewProfilePhoto() {
     }
 }
 
-// Function to close view photo modal
+// TAMBAHAN: Function to close view photo modal
 function closeViewPhotoModal() {
     document.getElementById('viewPhotoModal').classList.remove('show');
 }
 
+// TAMBAHAN: Close edit profile modal
 function closeEditProfileModal() {
     document.getElementById('editProfileModal').classList.remove('show');
     
@@ -176,6 +177,7 @@ function closeEditProfileModal() {
     document.getElementById('photoInput').value = '';
 }
 
+// TAMBAHAN: Handle photo upload
 function handlePhotoUpload(event) {
     const file = event.target.files[0];
     if (file) {
@@ -209,6 +211,7 @@ function handlePhotoUpload(event) {
     }
 }
 
+// TAMBAHAN: Remove profile photo
 function removeProfilePhoto() {
     if (confirm('Apakah Anda yakin ingin menghapus foto profil?')) {
         // Reset modal photo
@@ -233,6 +236,7 @@ function removeProfilePhoto() {
     }
 }
 
+// TAMBAHAN: Update profile photo
 function updateProfilePhoto(photoData) {
     // Update modal photo
     const profileImage = document.getElementById('profileImage');
@@ -254,6 +258,7 @@ function updateProfilePhoto(photoData) {
     updateSidebarAvatar(photoData);
 }
 
+// TAMBAHAN: Update sidebar avatar
 function updateSidebarAvatar(photoData) {
     const adminAvatar = document.querySelector('.admin-avatar');
     
@@ -287,6 +292,7 @@ function updateSidebarAvatar(photoData) {
     }
 }
 
+// TAMBAHAN: Save profile
 function saveProfile() {
     const fullName = document.getElementById('fullName').value;
     const email = document.getElementById('email').value;
@@ -330,6 +336,7 @@ function saveProfile() {
     closeEditProfileModal();
 }
 
+// TAMBAHAN: Logout function
 function logout() {
     if (confirm('Apakah Anda yakin ingin logout?')) {
         alert('Logout berhasil! Anda bisa redirect ke halaman login di sini.');
@@ -338,32 +345,91 @@ function logout() {
     document.getElementById('profile-dropdown').classList.remove('show');
 }
 
-// Close modal when clicking outside
+// Initialize the dashboard
+function initDashboard() {
+    // TAMBAHAN: Load saved profile data on page load
+    loadSavedProfile();
+    
+    populateMessageTable();
+    handleSort();
+    handleSearch();
+    
+    // Add active class to menu items on click
+    const menuItems = document.querySelectorAll('.menu-item');
+    menuItems.forEach(item => {
+        item.addEventListener('click', function() {
+            menuItems.forEach(i => i.classList.remove('active'));
+            this.classList.add('active');
+        });
+    });
+    
+    // TAMBAHAN: Global search functionality
+    const globalSearchInput = document.querySelector('.search-container input');
+    if (globalSearchInput) {
+        globalSearchInput.addEventListener('keyup', function(e) {
+            console.log('Global search for:', this.value);
+        });
+    }
+
+    // TAMBAHAN: Customer table search functionality (ini tadinya untuk customers-table, sekarang untuk message table juga)
+    // CATATAN: Ini sudah ditangani oleh handleSearch() di atas, jadi kita hapus yang duplikat ini
+
+    // TAMBAHAN: Sort dropdown functionality untuk customers table
+    // CATATAN: Ini sudah ditangani oleh handleSort() di atas, jadi kita hapus yang duplikat ini
+
+    // TAMBAHAN: Profile dropdown functionality
+    const adminProfile = document.getElementById('admin-profile');
+    const profileDropdown = document.getElementById('profile-dropdown');
+
+    if (adminProfile && profileDropdown) {
+        adminProfile.addEventListener('click', function(e) {
+            e.stopPropagation();
+            profileDropdown.classList.toggle('show');
+        });
+
+        // Close dropdown when clicking outside
+        document.addEventListener('click', function(e) {
+            if (!adminProfile.contains(e.target)) {
+                profileDropdown.classList.remove('show');
+            }
+        });
+
+        // Prevent dropdown from closing when clicking inside it
+        profileDropdown.addEventListener('click', function(e) {
+            e.stopPropagation();
+        });
+    }
+}
+
+// Run initialization when DOM is fully loaded
+document.addEventListener('DOMContentLoaded', initDashboard);
+
+// TAMBAHAN: Close modal when clicking outside
 document.addEventListener('click', function(e) {
     const modal = document.getElementById('editProfileModal');
     const viewModal = document.getElementById('viewPhotoModal');
     
-    if (e.target === modal) {
+    if (modal && e.target === modal) {
         closeEditProfileModal();
     }
     
-    if (e.target === viewModal) {
+    if (viewModal && e.target === viewModal) {
         closeViewPhotoModal();
     }
 });
 
-// Keyboard shortcuts
+// TAMBAHAN: Keyboard shortcuts
 document.addEventListener('keydown', function(e) {
     // Close modal with Escape key
     if (e.key === 'Escape') {
         const modal = document.getElementById('editProfileModal');
         const viewModal = document.getElementById('viewPhotoModal');
         
-        if (modal.classList.contains('show')) {
+        if (modal && modal.classList.contains('show')) {
             closeEditProfileModal();
         }
         
-        if (viewModal.classList.contains('show')) {
+        if (viewModal && viewModal.classList.contains('show')) {
             closeViewPhotoModal();
         }
     }

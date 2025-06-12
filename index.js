@@ -107,7 +107,7 @@ document.addEventListener('DOMContentLoaded', () => {
     // Add some CSS dynamically for smooth transitions
     const style = document.createElement('style');
     style.textContent = `
-        .product-carousel {
+        .product-carousel {z
             position: relative;
             overflow: hidden;
             width: 100%;

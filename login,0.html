@@ -1,0 +1,88 @@
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="login,0.css">
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+      rel="stylesheet"
+    />
+    <title>Login Page</title>
+</head>
+<body>
+    <div class="container" id="container">
+        <img src="image\Group 92.png" alt="">
+        <div class="sign-up">
+          <form id="sign-upForm">
+            <h1>Buat Akun</h1>
+            <!--<label class="nam">Nama</label>
+            <input type="text" id="nama" class="typewriter" />
+            <label class="ema">Email</label>
+            <input type="text" id="email" class="typewriter" />
+            <label class="pas">Password</label>
+            <input type="password" id="password" class="typewriter" />
+            
+            <button type="submit">Sign Up</button>-->
+
+            <label class="nam">Nama</label>
+            <input type="text" id="signup-nama" class="typewriter" /> <!-- Ubah ID -->
+            <label class="ema">Email</label>
+            <input type="text" id="signup-email" class="typewriter" /> <!-- Ubah ID -->
+            <label class="pas">Password</label>
+            <input type="password" id="signup-password" class="typewriter" /> <!-- Ubah ID -->
+    
+            <button type="submit">Sign Up</button>
+          </form>
+        </div>
+
+        
+        <div class="sign-in">
+          <form id="sign-inForm">
+            <h1>Masuk</h1>
+            <!--<label class="ema">Email</label>
+            <input type="text" id="email" class="typewriter" />
+            <label class="pas">Password</label>
+            <input type="password" id="password" class="typewriter" />
+            <a href="login.html" class="link">Forgot password</a>
+            <a href="index.html"><button type="submit">Sign In</button></a>-->
+
+            <label class="ema">Email</label>
+            <input type="text" id="signin-email" class="typewriter" /> <!-- Ubah ID -->
+            <label class="pas">Password</label>
+            <input type="password" id="signin-password" class="typewriter" /> <!-- Ubah ID -->
+            <a href="login.html" class="link">Forgot password</a>
+            <button type="submit">Sign In</button> <!-- Hapus a href karena submit sudah di handle JS -->
+          </form>
+        </div>
+        
+
+        <div class="toogle-container">
+          <div class="toogle">
+            
+
+            <div class="toogle-panel toogle-left">
+              <h1>Selamat Datang di <br> Pastry Corner!</h1>
+              <p>Silahkan membuat akun untuk bisa mengakses penuh fitur website kami. <br> Jika anda sudah memiliki akun silahkan untuk masuk.</p>
+              <button class="hidden" id="login" type="button">Masuk</button>
+              <img src="image\lingkaran.png" alt="">
+            </div>
+          
+            <div class="toogle-panel toogle-right">
+                <h1>Selamat Datang di <br> Pastry Corner!</h1>
+              <p>Silahkan masuk untuk dapat mengakses penuh fitur website kami. <br> Jika anda belum memiliki akun silahkan untuk daftar terlebih dahulu</p>
+              <button class="hidden" id="register" type="button">Daftar</button>
+              <img src="image\lingkaran.png" alt="">
+            </div>
+          </div>
+        </div>
+
+      </div>
+      <script src="login,0.js"></script>
+</body>
+</html>
